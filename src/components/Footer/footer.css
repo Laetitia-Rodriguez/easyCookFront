@@ -1,0 +1,19 @@
+.footer {
+    display: flex;
+    padding: 0.7em;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #04cc04;
+  
+}
+  
+.footer__link {
+color: #04cc04;
+text-decoration: none;
+}
+
+.footer__link__sign {
+display:flex;
+flex-direction:column;
+justify-content: center;
+}
