@@ -1,3 +1,6 @@
+// Import css
+import './footer.css';
+
 const Footer = () => (
     <footer className="footer">
       <a className="footer__link" href="#">

@@ -8,12 +8,12 @@
 }
   
 .footer__link {
-color: #04cc04;
-text-decoration: none;
+    color: #04cc04;
+    text-decoration: none;
 }
 
 .footer__link__sign {
-display:flex;
-flex-direction:column;
-justify-content: center;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
 }
