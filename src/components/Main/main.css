@@ -1,0 +1,9 @@
+.main {
+    justify-content: center;
+    /* To force its child div to take its full height */
+    min-height:55vh;
+    display:flex; 
+    flex-direction:column;
+    /* To force this div to take its parent full height */
+    flex-grow: 1; 
+}

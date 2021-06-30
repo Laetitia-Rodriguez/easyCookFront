@@ -1,0 +1,35 @@
+.homepage {
+    /* To force this div to take its parent full height */
+    flex-grow: 1;
+    /* To center the child div in the height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* To center the child div in the width */
+    align-items: center;
+}
+
+.homepage p {
+    margin-bottom: 2em;
+}
+
+.homepage__input-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.homepage input {
+    margin-bottom: 1em;
+    margin-right: 1em;
+    padding: 0.3em;
+}
+
+.homepage__a {
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 2px;
+    box-shadow:grey 1px 1px 1px;
+    padding: 0.3em;
+    color:white;
+    background-color: #04cc04;
+}

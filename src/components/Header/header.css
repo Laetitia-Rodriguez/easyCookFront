@@ -1,0 +1,70 @@
+.header {
+    background-color: #04cc04;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: white;
+    padding-top: 0.3em;
+    padding-bottom: 0.5em;
+    width:100%;
+  }
+  
+  .header__title {
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    width:100%;
+    margin-block-end:0px;
+  }
+
+  /* .header a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: row;
+  } */
+  
+  .header__h1_left {
+    /* TODO : cancel when Easycook logo done */
+    margin-right: -25px;
+  }
+  
+  .header__egg {
+    height:1.6em;
+    /* TODO : cancel when Easycook logo done */
+    margin: -25px;
+  }
+  
+  .header__h1_right {
+    /* TODO : cancel when Easycook logo done */
+    margin-left: -25px;
+  }
+  
+  .header__logo {
+    width: 12vw;
+    height:2.3em;
+  }
+  
+  .header__main {
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    /* Style to cancel default stylesheet */
+    margin-block-start:0px;
+  }
+  
+  .header__tagline {
+    width: 45%;
+    text-align: center;
+    /* Style to cancel default stylesheet */
+    margin-block-start:0px;
+    margin-block-end:0px;
+  }
+  
+  .header__image {
+    width:35vw;
+    height:4.5em;
+    /* Style to cancel default stylesheet */
+    margin-block-start:0px;
+    margin-block-start:0px;
+  }
