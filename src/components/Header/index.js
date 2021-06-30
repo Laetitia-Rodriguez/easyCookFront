@@ -16,7 +16,9 @@ const Header = () => (
             <img src={egg} className="header__egg" alt=""/>
             <img src={egg} className="header__egg" alt=""/>
             <h1 className="header__h1_right">k</h1>
-            <img src={headerLogo} className="header__logo" alt="Chef Gear Hat icon by Streamline"/>
+            <a href="/">
+                <img src={headerLogo} className="header__logo" alt="Chef Gear Hat icon by Streamline"/>
+            </a>
         </div>
         <div className="header__main">
             <p className="header__tagline">
