@@ -19,7 +19,7 @@ const Homepage = () => (
             </a> 
        </div>
        <p>OU</p>
-       <a href='/mentions-légales' className="homepage__a">ce que j'ai dans mon frigo </a>
+       <a href='/mon-frigo' className="homepage__a">ce que j'ai dans mon frigo </a>
     </div>
 )
 
