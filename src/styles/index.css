@@ -3,12 +3,16 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  height:100%;
-  margin:0px;
   font-family: 'Roboto', sans-serif;
+  height:100%;
+}
+
+/* 
+  On mobile device bigger than 500px, the following rules are valid
+*/
+@media screen and (min-width: 500px)
+{
+  body {
+    font-size: 2em;
+  }
 }
