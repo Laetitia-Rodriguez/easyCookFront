@@ -1,3 +1,12 @@
 .fridge li {
     list-style: none;
 }
+
+.fridge__submit-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.fridge input {
+    margin-right: 1em;
+}
