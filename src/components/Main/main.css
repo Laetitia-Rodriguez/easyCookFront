@@ -1,9 +1,15 @@
 .main {
-    justify-content: center;
-    /* To force its child div to take its full height */
-    min-height:55vh;
     display:flex; 
     flex-direction:column;
-    /* To force this div to take its parent full height */
+    padding:1em; 
+
+    /* To force this div to take its parent (App) full height */
     flex-grow: 1; 
+
+    justify-content: center;
+   
+    /* To make the main content scroll behind the footer */
+    overflow: auto;
+    
+    margin-bottom: 15vh;
 }

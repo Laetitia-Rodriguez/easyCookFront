@@ -1,10 +1,16 @@
 /* Import Google font */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;700');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700');
+
+html {
+  min-height:100%;
+}
 
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  height:100%;
+  min-height:100%;
+  box-sizing: border-box;
+  width:100%;
 }
 
 /* 

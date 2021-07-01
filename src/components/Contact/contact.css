@@ -1,0 +1,32 @@
+.contact {
+    font-weight: 300;
+}
+
+.contact__h1 {
+    margin-block-start: 0px;
+}
+
+.contact__presentation {
+    margin-block-start: 0px;
+    
+    margin-block-end: 0.5em;
+}
+.contact__logo_linkedIn {
+    width: 10vw;
+}
+
+.contact__form {
+    margin-top: 1em;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact__form label {
+    font-weight: bold;
+    margin-bottom: 0.3em;
+}
+
+.contact__form input {
+    margin-bottom: 0.7em;
+}
