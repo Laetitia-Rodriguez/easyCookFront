@@ -3,7 +3,9 @@ import './recipe.css';
 
 const Recipe = () => (
     <div className="recipe">
-        page d'une recette
+        <h2>Titre de la recette</h2>
+        <p>Ingrédients de la recette</p>
+        <p>Etapes de la recette</p>
     </div>
 )
 
