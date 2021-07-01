@@ -15,11 +15,11 @@ const Contact = () => (
         </a>
         <p>Vous pouvez aussi m'envoyer un message, je vous répondrai dans les meilleurs délais.</p>
         <div className="contact__form-container">
-            <form className="contact__form">
+            <form className="contact__form" method="post" action="mail.php">
                 <label>Votre email</label>
                 <input type="email"></input>
                 <label>Votre message</label>
-                <input type="text"/>
+                <textarea type="text" name="message"/>
                 <label></label>
                 <input type="submit" value="Envoyer"/>
             </form>

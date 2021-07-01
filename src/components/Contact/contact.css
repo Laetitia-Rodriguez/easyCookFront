@@ -30,3 +30,7 @@
 .contact__form input {
     margin-bottom: 0.7em;
 }
+
+.contact__form textarea {
+    margin-bottom: 0.7em;
+}
