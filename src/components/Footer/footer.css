@@ -9,6 +9,8 @@
     left:0;
     right:0;
     padding:1em; 
+    border: 1px solid grey;
+    box-shadow:2px 2px 2px;
 }
   
 .footer__link {

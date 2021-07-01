@@ -1,15 +1,16 @@
 .main {
     display:flex; 
-    flex-direction:column;
+    flex-direction:column; 
+    justify-content: center;
     padding:1em; 
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+    box-shadow:2px 2px 2px;
 
     /* To force this div to take its parent (App) full height */
     flex-grow: 1; 
-
-    justify-content: center;
-   
-    /* To make the main content scroll behind the footer */
+ 
+    /* To make a scroll and the main content goes behind the footer */
     overflow: auto;
-    
     margin-bottom: 15vh;
 }
