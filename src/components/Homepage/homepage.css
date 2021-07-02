@@ -14,17 +14,6 @@
     font-size: 1.1em;
 }
 
-.homepage__input-container {
-    display: flex;
-    flex-direction: row;
-}
-
-.homepage input {
-    margin-bottom: 1em;
-    margin-right: 1em;
-    padding: 0.3em;
-}
-
 .homepage__a {
     text-decoration: none;
     border: 1px solid black;

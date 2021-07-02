@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
 
 // Import react-router-dom
 import { BrowserRouter as Router } from 'react-router-dom';
+
+// Import local
+import store from './store';
 
 // Local import
 import './styles/index.css';
@@ -11,9 +15,11 @@ import App from './components/App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <App />
+      </Router>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

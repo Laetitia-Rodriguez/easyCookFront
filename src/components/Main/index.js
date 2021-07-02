@@ -1,3 +1,5 @@
+import React from 'react';
+
 // Yarn import
 import { Switch, Route } from 'react-router-dom';
 
@@ -9,8 +11,7 @@ import LegalMentions from '../../components/LegalMentions';
 import Contact from '../../components/Contact';
 import SignIn from '../../components/SignIn';
 import SignUp from '../../components/SignUp';
-
-import Homepage from '../../components/Homepage';
+import Homepage from '../../containers/Homepage';
 
 import './main.css';
 
