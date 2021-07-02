@@ -1,4 +1,4 @@
-import { UPDATE_SEARCH_INPUT } from '../actions/search';
+import { UPDATE_SEARCH_INPUT, DISPLAY_SEARCH_RESULTS, } from '../actions/search';
 
 const initialState = {
     // Initial state, before actions
@@ -12,6 +12,12 @@ function searchReducer(state = initialState, action = {}) {
             return {
               ...state,
               [action.name]: action.newValue,
+            };
+
+        case DISPLAY_SEARCH_RESULTS:
+            return {
+                ...state,
+                resultsList: action.resultsArray,
             };
             
         default:

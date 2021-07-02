@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import SearchBar from '../../components/SearchBar';
 
 // Import the actions from search.js
-import { updateSearchInput } from '../../actions/search';
+import { updateSearchInput, getResults } from '../../actions/search';
 
 // MapStateToProps is to read something in the state
 const mapStateToProps = (state) => (
@@ -18,6 +18,9 @@ const mapStateToProps = (state) => (
     // function wich is dispatching the action
     setSearchInput: (newValue, name) => {
       dispatch(updateSearchInput(newValue, name));
+    },
+    manageSubmit: () => {
+      dispatch(getResults());
     },
   });
   

@@ -1,5 +1,7 @@
 // Action types
 export const UPDATE_SEARCH_INPUT = 'UPDATE_SEARCH_INPUT';
+export const GET_RESULTS = 'GET_RESULTS';
+export const DISPLAY_SEARCH_RESULTS = 'DISPLAY_SEARCH_RESULTS';
 
 // Action creators
 export const updateSearchInput = (newValue, name) => ({
@@ -7,3 +9,12 @@ export const updateSearchInput = (newValue, name) => ({
     newValue,
     name,
   });
+
+export const getResults = () => ({
+  type: GET_RESULTS,
+});
+
+export const displaySearchResults = (resultsArray) => ({
+  type: DISPLAY_SEARCH_RESULTS,
+  resultsArray,
+});

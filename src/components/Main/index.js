@@ -5,7 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 
 // Local import
 import Fridge from '../../components/Fridge';
-import Results from '../../components/Results';
+import Results from '../../containers/Results';
 import Recipe from '../../components/Recipe';
 import LegalMentions from '../../components/LegalMentions';
 import Contact from '../../components/Contact';
