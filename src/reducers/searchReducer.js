@@ -1,10 +1,11 @@
-import { UPDATE_SEARCH_INPUT, DISPLAY_SEARCH_RESULTS, RESULTS_RETURNED } from '../actions/search';
+import { UPDATE_SEARCH_INPUT, GET_RESULTS, RESULTS_RETURNED, DISPLAY_SEARCH_RESULTS, } from '../actions/search';
 
 const initialState = {
     // Initial state, before actions
     search: '',
     resultsList: [],
     resultsReturned: false,
+    redirect: false,
 };
 
 function searchReducer(state = initialState, action = {}) {
@@ -16,18 +17,25 @@ function searchReducer(state = initialState, action = {}) {
               [action.name]: action.newValue,
             };
 
-        case DISPLAY_SEARCH_RESULTS:
+        case GET_RESULTS:
             return {
                 ...state,
-                resultsList: action.resultsArray,
+                redirect: true,
             };
-        
+
         case RESULTS_RETURNED:
             return {
                 ...state,
                 resultsReturned: true,
             };
-            
+
+        case DISPLAY_SEARCH_RESULTS:
+            return {
+                ...state,
+                resultsList: action.resultsArray,
+                resultsReturned: true,
+            };
+        
         default:
             return state;
     }

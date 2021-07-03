@@ -19,11 +19,11 @@ const Results = ({
                 <ul className="results__list">
                     {resultsList.map((result) => (
                         <li 
-                            key={result.div}
+                            key={result.id}
                             className="results__item"
                         >
                             <div className="results__item-container">
-                                <h3>{result.title}</h3>
+                                <h3>{result.name}</h3>
                             </div>
                         </li>
                     ))}

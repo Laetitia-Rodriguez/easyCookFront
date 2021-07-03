@@ -3,7 +3,7 @@ import './App.css';
 
 // Import components
 import Header from '../../components/Header';
-import Main from '../../components/Main';
+import Main from '../../containers/Main';
 import Footer from '../../components/Footer';
 
 const App = () => (

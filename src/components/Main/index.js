@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // Yarn import
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 // Local import
 import Fridge from '../../components/Fridge';
@@ -15,14 +16,17 @@ import Homepage from '../../containers/Homepage';
 
 import './main.css';
 
-const Main = () => (
+const Main = ({resultsList, redirect}) => (
     <main className="main">
+        {redirect && (
+          <Redirect to="/résultats" exact />
+        )}
         <Switch>
             <Route path="/mon-frigo" exact>
                 <Fridge />
             </Route>
             <Route path="/résultats" exact>
-                <Results />
+                <Results {... resultsList} />
             </Route>
             <Route path="/recette/:id" exact>
                 <Recipe />
@@ -45,5 +49,15 @@ const Main = () => (
         </Switch>
     </main>
 )
+
+Main.propTypes = {
+    redirect: PropTypes.bool.isRequired,
+    resultsList: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.number.isRequired,
+          title: PropTypes.string.isRequired,
+        }).isRequired,
+      ).isRequired,
+};
 
 export default Main;
