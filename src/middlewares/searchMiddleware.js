@@ -6,7 +6,7 @@ const searchMiddleware = (store) => (next) => (action) => {
     switch (action.type) {
         case GET_RESULTS: {
             const { search } = store.getState().search;
-            axios.get(`http://127.0.0.1:8000/api/recipes/searchbar?keyword=${search}`)
+            axios.get(`http://127.0.0.1:8000/api/recipes?name=${search}&ingredientsList=${search}&steps=${search}`)
         .then((response) => {
             console.log(response);
             store.dispatch(displaySearchResults(response.data));
