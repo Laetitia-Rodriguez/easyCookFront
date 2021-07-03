@@ -16,10 +16,10 @@ const SearchBar = ({
     const handleSubmit = (event) => {
         event.preventDefault();
         manageSubmit();
-    }
+    };
 
-
-    <form className="searchbar" onSubmit={handleSubmit}>
+    return (
+        <form className="searchbar" onSubmit={handleSubmit}>
         <input 
             className="searchbar__input" 
             type="search" 
@@ -37,6 +37,7 @@ const SearchBar = ({
             <FontAwesomeIcon icon={faSearch} className="searchbar__a"/>
         </a> */}
     </form>
+    );
 }
 SearchBar.propTypes = {
     setSearchInput: PropTypes.func.isRequired,

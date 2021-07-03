@@ -8,6 +8,7 @@ import Results from '../../components/Results';
 const mapStateToProps = (state) => (
     {
         resultsList: state.search.resultsList,
+        resultsReturned: state.search.resultsReturned,
     }
   );
   
