@@ -15,7 +15,7 @@ const Recipe = ({resultsList}) => {
   return (
       <div className="recipe">
           <h2 className="recipe__name">{recipe.name}</h2>
-          // TODO URI
+          {/*  TODO URI */}
           <img src={ 'http://127.0.0.1/easyCookAPI/src/utils/images/recipes/' + recipe.pictureFileName }  className="recipe__image" alt={recipe.name}/>
           <p className="recipe__title">Ingrédients :</p>
           <p className="recipe__ingredients" >{recipe.ingredientsList}</p>
