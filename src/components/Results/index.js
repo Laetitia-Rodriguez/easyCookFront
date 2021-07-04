@@ -1,15 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { Link } from 'react-router-dom';
+
 // Local import
 import './results.css';
 import Counter from '../../containers/Counter';
-// import Recipe from '../../components/Recipe';
 
 const Results = ({
     resultsList,
     resultsReturned,
 }) => {
+
     return (
         <>
         {resultsReturned 
@@ -22,13 +24,18 @@ const Results = ({
                             key={result.id}
                             className="results__item"
                         >
-                            <div className="results__item-container">
-                                <h3>{result.name}</h3>
-                            </div>
+                        <Link
+                            to={`/recette/${result.id}`}
+                            className="results__item-link"
+                        >
+                            <h3>{result.name}</h3>
+                            // TODO URI
+                            <img src={ 'http://127.0.0.1/easyCookAPI/src/utils/images/recipes/' + result.pictureFileName }  className="results__image" alt={result.name}/>
+                        </Link>
                         </li>
                     ))}
                 </ul>
-                <a href="/">Accueil</a>
+                <a className="results__return-button" href="/">Accueil</a>
             </div>
         )}
         </>
@@ -42,11 +49,7 @@ Results.propTypes = {
         PropTypes.shape({
           id: PropTypes.number.isRequired,
           name: PropTypes.string.isRequired,
-          picture_file_name: PropTypes.string.isRequired,
-          food_group: PropTypes.string.isRequired,
-          food_group_id: PropTypes.number.isRequired,
-          food_subgroup : PropTypes.string.isRequired,
-          food_subgroup_id: PropTypes.number.isRequired,
+          picture_file_name: PropTypes.string,
         }).isRequired,
       ).isRequired,
 };

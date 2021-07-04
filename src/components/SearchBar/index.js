@@ -20,23 +20,24 @@ const SearchBar = ({
 
     return (
         <form className="searchbar" onSubmit={handleSubmit}>
-        <input 
-            className="searchbar__input" 
-            type="search" 
-            placeholder=' un ingrédient | Ex: "tomate"'
-            minLength="2" 
-            maxLength="50" 
-            value={search}
-            onChange={(event) => {
-                setSearchInput(event.target.value, 'search');
-            }}
-        >
-        </input>
-        {/*
-        <a href="/résultats">
-            <FontAwesomeIcon icon={faSearch} className="searchbar__a"/>
-        </a> */}
-    </form>
+            <>
+                <input 
+                    className="searchbar__input" 
+                    type="search" 
+                    placeholder=' un ingrédient | Ex: "tomate"'
+                    minLength="2" 
+                    maxLength="50" 
+                    value={search}
+                    onChange={(event) => {
+                        setSearchInput(event.target.value, 'search');
+                    }}
+                >
+                </input>
+                <button className="searchbar__button" type="submit">
+                    <FontAwesomeIcon icon={faSearch} className="searchbar__button-icon"/>
+                </button>
+            </>
+        </form>
     );
 }
 SearchBar.propTypes = {

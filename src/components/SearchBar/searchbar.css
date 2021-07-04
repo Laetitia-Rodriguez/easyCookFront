@@ -9,12 +9,13 @@
     padding: 0.3em;
 }
 
-.searchbar__a {
+.searchbar__button {
     text-decoration: none;
     border: 1px solid black;
     border-radius: 2px;
     box-shadow:grey 1px 1px 1px;
-    padding: 0.3em;
-    color:white;
     background-color: #04cc04;
+    color:white;
+    height:2.1em;
 }
+

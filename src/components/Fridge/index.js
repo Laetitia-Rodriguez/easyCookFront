@@ -22,3 +22,11 @@ const Fridge = () => (
 )
 
 export default Fridge;
+
+
+/* à garder pour plus tard
+food_group: PropTypes.string.isRequired,
+food_group_id: PropTypes.number.isRequired,
+food_subgroup : PropTypes.string.isRequired,
+food_subgroup_id: PropTypes.number.isRequired,
+*/

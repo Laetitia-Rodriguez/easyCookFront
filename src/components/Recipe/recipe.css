@@ -1,0 +1,28 @@
+.recipe__ingredients {
+    display:flex;
+    flex-direction: column;
+
+}
+
+.recipe__image {
+    width:50vw;
+    margin-bottom: 1em;
+}
+
+.recipe__title {
+    text-decoration-line: underline;
+    font-weight: bold;
+    text-align: left;
+}
+
+.recipe__ingredients {
+    text-align: left;
+    /* Back to the line */
+    white-space: pre-line;
+}
+
+.recipe__steps {
+    text-align: left;
+    /* Back to the line */
+    white-space: pre-line;
+}

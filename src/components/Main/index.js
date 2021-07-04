@@ -7,7 +7,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 // Local import
 import Fridge from '../../components/Fridge';
 import Results from '../../containers/Results';
-import Recipe from '../../components/Recipe';
+import Recipe from '../../containers/Recipe';
 import LegalMentions from '../../components/LegalMentions';
 import Contact from '../../components/Contact';
 import SignIn from '../../components/SignIn';
@@ -55,7 +55,7 @@ Main.propTypes = {
     resultsList: PropTypes.arrayOf(
         PropTypes.shape({
           id: PropTypes.number.isRequired,
-          title: PropTypes.string.isRequired,
+          name: PropTypes.string.isRequired,
         }).isRequired,
       ).isRequired,
 };

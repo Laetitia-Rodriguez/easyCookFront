@@ -1,3 +1,38 @@
-.results li {
-    list-style: none;
+.results {
+    margin-bottom: 2em;
 }
+
+.results__list {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    padding-inline-start: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.results__item {
+    list-style: none;
+    margin-bottom: 1.5em;
+}
+
+.results__item-link {
+    margin: auto;
+    text-decoration: none;
+    color: black;
+}
+
+.results__image {
+    width:50vw;
+}
+
+.results__return-button {
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 2px;
+    box-shadow:grey 1px 1px 1px;
+    padding: 0.3em;
+    color:white;
+    background-color: #04cc04;
+}
+
