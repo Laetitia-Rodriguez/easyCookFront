@@ -3,6 +3,7 @@ export const UPDATE_SEARCH_INPUT = 'UPDATE_SEARCH_INPUT';
 export const GET_RESULTS = 'GET_RESULTS';
 export const DISPLAY_SEARCH_RESULTS = 'DISPLAY_SEARCH_RESULTS';
 export const RESULTS_RETURNED = 'RESULTS_RETURNED';
+export const ERROR_RETURNED = 'ERROR_RETURNED';
 
 // Action creators
 export const updateSearchInput = (newValue, name) => ({
@@ -22,4 +23,8 @@ export const displaySearchResults = (resultsArray) => ({
 
 export const resultsReturned = () => ({
   type: RESULTS_RETURNED,
+});
+
+export const errorReturned = () => ({
+  type: ERROR_RETURNED,
 });

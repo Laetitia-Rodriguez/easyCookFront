@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { GET_RESULTS,  displaySearchResults, } from '../actions/search';
+import { GET_RESULTS,  displaySearchResults, errorReturned } from '../actions/search';
 
 const searchMiddleware = (store) => (next) => (action) => {
     switch (action.type) {
@@ -12,7 +12,7 @@ const searchMiddleware = (store) => (next) => (action) => {
             store.dispatch(displaySearchResults(response.data));
           })
           .catch((error) => {
-            console.log(error);
+            store.dispatch(errorReturned());
           })
           .finally(() => {
           });
