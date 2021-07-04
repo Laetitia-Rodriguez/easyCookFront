@@ -1,6 +1,6 @@
-const Counter = (t) => (
+const Counter = (resultsList) => (
     <p className="counter">
-        Vous pouvez faire {} recettes.
+        Vous pouvez faire {resultsList.resultsCounter} recettes.
     </p>
 );
 

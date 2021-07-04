@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 // Local import
 import './results.css';
-import Counter from '../../components/Counter';
+import Counter from '../../containers/Counter';
 // import Recipe from '../../components/Recipe';
 
 const Results = ({

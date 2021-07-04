@@ -6,6 +6,7 @@ const initialState = {
     resultsList: [],
     resultsReturned: false,
     redirect: false,
+    resultsCounter: 0,
 };
 
 function searchReducer(state = initialState, action = {}) {
@@ -34,6 +35,7 @@ function searchReducer(state = initialState, action = {}) {
                 ...state,
                 resultsList: action.resultsArray,
                 resultsReturned: true,
+                resultsCounter: action.resultsArray.length,
             };
         
         default:
