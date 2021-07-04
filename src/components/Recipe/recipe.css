@@ -1,3 +1,7 @@
+.recipe {
+    margin-bottom: 2em;
+}
+
 .recipe__ingredients {
     display:flex;
     flex-direction: column;
@@ -25,4 +29,15 @@
     text-align: left;
     /* Back to the line */
     white-space: pre-line;
+    margin-bottom: 1.5em;
+}
+
+.recipe__return-button {
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 2px;
+    box-shadow:grey 1px 1px 1px;
+    padding: 0.3em;
+    color:white;
+    background-color: #04cc04;
 }
