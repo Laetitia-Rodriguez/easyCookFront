@@ -21,10 +21,13 @@ const Fridge = ({
 
     return (
         <div className="fridge">
-            <h2>Dans mon frigo (et mon placard) j'ai:</h2>
-            <ul>
+            <h2>Dans mon frigo <br/> (et mon placard)<br/>j'ai:</h2>
+            <ul className="fridge__groups">
                {groupsList.map((group) => ( 
-                <li key={group.food_group}>
+                <li 
+                    key={group.food_group}
+                    className="fridge__groups-button"
+                >
                     {group.food_group}
                 </li>
                ))}
@@ -33,8 +36,8 @@ const Fridge = ({
                 <p>Erreur de connexion à la base de données</p>
             )}
             <div className="fridge__submit-container">
-                <input type="submit" value="Chercher des recettes"/>
-                <a href="/résultats">
+                <input className="fridge__submit-button" type="submit" value="Chercher des recettes"/>
+                <a  href="/résultats">
                     <FontAwesomeIcon icon={faSearch} className="homepage__a"/>
                 </a> 
             </div>

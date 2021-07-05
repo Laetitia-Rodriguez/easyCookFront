@@ -1,3 +1,9 @@
+.fridge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .fridge li {
     list-style: none;
 }
@@ -9,4 +15,33 @@
 
 .fridge input {
     margin-right: 1em;
+}
+
+.fridge__groups {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline-start: 0;
+}
+
+.fridge__groups-button {
+    border: 1px solid black;
+    border-radius: 2px;
+    box-shadow:grey 1px 1px 1px;
+    padding: 0.3em;
+    color:white;
+    background-color: #c22900;
+    width: 50vw;
+    margin-bottom: 2em;
+}
+
+.fridge__submit-button {
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 2px;
+    box-shadow:grey 1px 1px 1px;
+    padding: 0.3em;
+    color:white;
+    background-color: #04cc04;
+    margin-bottom: 2em;
 }
