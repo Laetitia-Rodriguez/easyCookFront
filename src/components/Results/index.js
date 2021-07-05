@@ -28,7 +28,7 @@ const Results = ({
                                 className="results__item-link"
                             >
                                 <h3>{result.name}</h3>
-                            {/*  TODO URI */}
+                                {/*  TODO URI */}
                                 <img src={ 'http://127.0.0.1/easyCookAPI/src/utils/images/recipes/' + result.pictureFileName }  className="results__image" alt={result.name}/>
                             </Link>
                             </li>

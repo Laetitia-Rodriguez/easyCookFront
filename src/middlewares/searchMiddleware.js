@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 import { GET_RESULTS,  displaySearchResults, errorReturned } from '../actions/search';
-
 const searchMiddleware = (store) => (next) => (action) => {
     switch (action.type) {
         case GET_RESULTS: {
@@ -18,7 +17,8 @@ const searchMiddleware = (store) => (next) => (action) => {
           });
         next(action);
         break;
-      }
+        }
+
       default:
         // Next middleware or reducer
         next(action);

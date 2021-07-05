@@ -7,11 +7,13 @@ import reducer from '../reducers';
 
 // Import the middlewares
 import searchMiddleware from '../middlewares/searchMiddleware';
+import fridgeMiddleware from '../middlewares/fridgeMiddleware';
 
 // Combine devtools with middlewares
 const enhancers = composeWithDevTools (
     applyMiddleware(
-        searchMiddleware
+        searchMiddleware,
+        fridgeMiddleware,
     ),
 ); 
 
