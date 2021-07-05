@@ -37,9 +37,9 @@ const Fridge = ({
             )}
             <div className="fridge__submit-container">
                 <input className="fridge__submit-button" type="submit" value="Chercher des recettes"/>
-                <a  href="/résultats">
-                    <FontAwesomeIcon icon={faSearch} className="homepage__a"/>
-                </a> 
+                <button className="fridge__button" type="submit">
+                    <FontAwesomeIcon icon={faSearch} className="fridge__button-icon"/>
+                </button>
             </div>
         </div>
         )
