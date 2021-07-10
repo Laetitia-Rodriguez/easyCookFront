@@ -4,10 +4,10 @@ import {
   GET_FOOD_GROUPS,
   displayFoodGroups,
   noGroupReturned,
-  FETCH_FOOD_SUBGROUPS,
-  displayFoodSubgroups,
+  GET_FOOD_SUBGROUPS,
+  displayFoodSubgroups, 
   noSubgroupReturned,
-  foodSubgroupsReturned,
+  /* foodSubgroupsReturned */
 
 } from '../actions/fridge';
 
@@ -29,14 +29,13 @@ const fridgeMiddleware = (store) => (next) => (action) => {
       break;
       }
 
-        case FETCH_FOOD_SUBGROUPS: {
-          const { foodGroupName } = store.getState().fridge;
-          console.log(foodGroupName);
-          axios.get(`http://127.0.0.1:8000/api/products/groups/${foodGroupName}/subgroups`)
+        case GET_FOOD_SUBGROUPS: {
+         /* const { foodGroupName } = store.getState().fridge;
+          console.log(foodGroupName); */
+          axios.get(`http://127.0.0.1:8000/api/products/subgroups`)
       .then((response) => {
-          console.log(response);
+          // console.log(response);
           store.dispatch(displayFoodSubgroups(response.data));
-          store.dispatch(foodSubgroupsReturned(true));
         })
         .catch((error) => {
           console.log(error);
