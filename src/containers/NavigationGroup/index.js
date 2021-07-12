@@ -9,22 +9,22 @@ import { setSelectedGroup, getFoodSubgroups } from '../../actions/fridge';
 // MapStateToProps is to read something in the state
 const mapStateToProps = (state) => (
     {
-        foodSubgroupsList: state.fridge.foodSubgroupsList,
         foodSubgroupsReturned: state.fridge.foodSubgroupsReturned,
-        foodGroupsList: state.fridge.foodGroupsList,
         selectedFoodGroupId: state.fridge.selectedFoodGroupId,
+        foodGroupsList: state.fridge.foodGroupsList,
+        foodSubgroupsList: state.fridge.foodSubgroupsList,
     }
-  );
+);
   
-  // MapDispatchToProps is to dispatch actions in store direction (updating state)
-  const mapDispatchToProps = (dispatch) => ({  
-     manageFoodGroup: (food_group_id) => {
-         dispatch(setSelectedGroup(food_group_id));
-     },
-     loadFoodSubgroups: () => {
+// MapDispatchToProps is to dispatch actions in store direction (updating state)
+const mapDispatchToProps = (dispatch) => ({  
+    loadFoodSubgroups: () => {
         dispatch(getFoodSubgroups());
-     },
-  });
-  
-  // === création de l'assistant
-  export default connect(mapStateToProps, mapDispatchToProps)(NavigationGroup);
+    },
+    manageFoodGroup: (food_group_id) => {
+        dispatch(setSelectedGroup(food_group_id));
+    },
+});
+
+// === création de l'assistant
+export default connect(mapStateToProps, mapDispatchToProps)(NavigationGroup);

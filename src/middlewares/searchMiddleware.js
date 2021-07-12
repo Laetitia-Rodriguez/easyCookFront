@@ -6,17 +6,17 @@ const searchMiddleware = (store) => (next) => (action) => {
         case GET_RESULTS: {
             const { search } = store.getState().search;
             axios.get(`http://127.0.0.1:8000/api/recipes?ingredientsList=${search}`)
-        .then((response) => {
-            console.log(response);
-            store.dispatch(displaySearchResults(response.data));
-          })
-          .catch((error) => {
-            store.dispatch(errorReturned());
-          })
-          .finally(() => {
-          });
-        next(action);
-        break;
+              .then((response) => {
+                  console.log(response);
+                  store.dispatch(displaySearchResults(response.data));
+                })
+              .catch((error) => {
+                  store.dispatch(errorReturned());
+              })
+              .finally(() => {
+              });
+              next(action);
+              break;
         }
 
       default:

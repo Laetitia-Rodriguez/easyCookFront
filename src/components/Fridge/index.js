@@ -19,8 +19,6 @@ const Fridge = ({
         loadFoodGroups();
     }, []);
 
-   
-
     console.log(foodGroupsList);
 
     return (
@@ -37,7 +35,6 @@ const Fridge = ({
             </div>
         </div>
     );
-
 }
 
 Fridge.propTypes = {
@@ -46,10 +43,9 @@ Fridge.propTypes = {
     foodGroupsList: PropTypes.arrayOf(
         PropTypes.shape({
             food_group: PropTypes.string.isRequired,
-            food_group_id: PropTypes.number.isRequired,
+            food_group_id: PropTypes.string.isRequired,
         }).isRequired,
     ).isRequired,
-    
 };
 
 export default Fridge;

@@ -1,7 +1,8 @@
 import { 
-    SET_SELECTED_GROUP,
+    
     DISPLAY_FOOD_GROUPS,
     NO_GROUP_RETURNED,
+    SET_SELECTED_GROUP,
     DISPLAY_FOOD_SUBGROUPS, 
     NO_SUBGROUP_RETURNED,
     FOOD_SUBGROUPS_RETURNED,
@@ -10,22 +11,17 @@ import {
 const initialState = {
     // Initial state, before actions
     foodGroupsList: [],
-    foodSubgroupsList: [],
     noGroupReturned: false,
+    foodSubgroupsList: [],
     noSubgroupReturned: false,
     selectedFoodGroupId: null,
     foodSubgroupsReturned: false,
-    group: {},
 };
 
 function fridgeReducer(state = initialState, action = {}) {
     switch (action.type) {
 
-        case SET_SELECTED_GROUP:
-            return {
-                ...state,
-                selectedFoodGroupId: action.food_group_id,
-            };
+       
         
         case DISPLAY_FOOD_GROUPS:
             return {
@@ -37,6 +33,12 @@ function fridgeReducer(state = initialState, action = {}) {
             return {
                 ...state,
                 noGroupReturned: true,
+            };
+
+        case SET_SELECTED_GROUP:
+            return {
+                ...state,
+                selectedFoodGroupId: action.food_group_id,
             };
 
         case DISPLAY_FOOD_SUBGROUPS:
@@ -57,7 +59,6 @@ function fridgeReducer(state = initialState, action = {}) {
                 foodSubgroupsReturned: true,
             };
     
-
         default:
             return state;
     }

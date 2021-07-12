@@ -13,9 +13,9 @@ const mapStateToProps = (state) => (
     }
   );
   
-  // MapDispatchToProps is to dispatch actions in store direction (updating state)
-  const mapDispatchToProps = (dispatch) => ({
-  });
-  
-  // === création de l'assistant
-  export default connect(mapStateToProps, mapDispatchToProps)(Results);
+// MapDispatchToProps is to dispatch actions in store direction (updating state)
+const mapDispatchToProps = (dispatch) => ({
+});
+
+// === création de l'assistant
+export default connect(mapStateToProps, mapDispatchToProps)(Results);
