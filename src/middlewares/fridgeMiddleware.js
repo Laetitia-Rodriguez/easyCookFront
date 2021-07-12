@@ -7,7 +7,7 @@ import {
   GET_FOOD_SUBGROUPS,
   displayFoodSubgroups, 
   noSubgroupReturned,
-  /* foodSubgroupsReturned */
+  foodSubgroupsReturned,
 
 } from '../actions/fridge';
 
@@ -36,6 +36,7 @@ const fridgeMiddleware = (store) => (next) => (action) => {
       .then((response) => {
           // console.log(response);
           store.dispatch(displayFoodSubgroups(response.data));
+          store.dispatch(foodSubgroupsReturned());
         })
         .catch((error) => {
           console.log(error);

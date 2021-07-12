@@ -8,24 +8,24 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 // Local import
 import './fridge.css';
 import NavigationGroupsList from '../../containers/NavigationGroupsList';
-import NavigationSubgroupsList from '../../containers/NavigationSubgroupsList';
 
 const Fridge = ({
     loadFoodGroups,
     noGroupReturned,
-    foodGroupsList,
+    foodGroupsList, 
 }) => {
 
     useEffect (() => {
         loadFoodGroups();
     }, []);
 
+   
+
     console.log(foodGroupsList);
 
     return (
         <div className="fridge">
-            <NavigationGroupsList {... foodGroupsList} />
-            <NavigationSubgroupsList />
+            <NavigationGroupsList {... foodGroupsList} link />
             {noGroupReturned && (
                 <p>Erreur de connexion à la base de données</p>
             )}
@@ -46,8 +46,10 @@ Fridge.propTypes = {
     foodGroupsList: PropTypes.arrayOf(
         PropTypes.shape({
             food_group: PropTypes.string.isRequired,
+            food_group_id: PropTypes.number.isRequired,
         }).isRequired,
     ).isRequired,
+    
 };
 
 export default Fridge;

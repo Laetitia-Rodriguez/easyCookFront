@@ -1,9 +1,11 @@
+
 const NavigationSubgroupLink= ({
   name,
-  group
+  subgroup
 }) => {
+  console.log(subgroup);
   return (
-    <div className="navigation_subgroup">
+    <div className="navigation_subgroup" id={name}>
         {name}
     </div>
   )

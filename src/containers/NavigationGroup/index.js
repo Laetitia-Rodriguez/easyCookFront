@@ -4,13 +4,15 @@ import { connect } from 'react-redux';
 import NavigationGroup from '../../components/NavigationGroup';
 
 // Import the actions from fridge.js
-import { setSelectedGroup } from '../../actions/fridge';
+import { setSelectedGroup, getFoodSubgroups } from '../../actions/fridge';
 
 // MapStateToProps is to read something in the state
 const mapStateToProps = (state) => (
     {
         foodSubgroupsList: state.fridge.foodSubgroupsList,
-        
+        foodSubgroupsReturned: state.fridge.foodSubgroupsReturned,
+        foodGroupsList: state.fridge.foodGroupsList,
+        selectedFoodGroupId: state.fridge.selectedFoodGroupId,
     }
   );
   
@@ -18,7 +20,10 @@ const mapStateToProps = (state) => (
   const mapDispatchToProps = (dispatch) => ({  
      manageFoodGroup: (food_group_id) => {
          dispatch(setSelectedGroup(food_group_id));
-     }
+     },
+     loadFoodSubgroups: () => {
+        dispatch(getFoodSubgroups());
+     },
   });
   
   // === création de l'assistant

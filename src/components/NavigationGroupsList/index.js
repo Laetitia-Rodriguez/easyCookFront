@@ -11,14 +11,14 @@ const NavigationGroupsList = ({
     return (
         <div className="navigation_group">
             {foodGroupsList.map((group) => (
-            <NavigationGroup 
-                key={group.food_group_id}
-                title={group.food_group}
-                selectFoodGroup={selectFoodGroup}
-                {... group}
-            />
-            ))
-            }
+                <NavigationGroup 
+                    key={group.food_group_id}
+                    title={group.food_group}
+                    id={group.food_group_id}
+                    selectFoodGroup={selectFoodGroup}
+                    {... group}
+                />
+            ))}
         </div>
     )
 }
@@ -27,9 +27,10 @@ NavigationGroupsList.propTypes = {
     foodGroupsList: PropTypes.arrayOf(
         PropTypes.shape({
             food_group: PropTypes.string.isRequired,
+            food_group_id: PropTypes.number.isRequired,
         }).isRequired,
       ).isRequired,
-      selectFoodGroup: PropTypes.func,
+    selectFoodGroup: PropTypes.func,
 };
 
 export default NavigationGroupsList;

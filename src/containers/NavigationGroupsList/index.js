@@ -2,18 +2,18 @@ import { connect } from 'react-redux';
 
 // Import display component
 import NavigationGroupsList from '../../components/NavigationGroupsList';
-import {  } from '../../actions/fridge';
 
 // MapStateToProps is to read something in the state
 const mapStateToProps = (state) => (
     {
        foodGroupsList: state.fridge.foodGroupsList,
+       group: state.fridge.group,
     }
   );
   
   // MapDispatchToProps is to dispatch actions in store direction (updating state)
   const mapDispatchToProps = (dispatch) => ({
-
+      
   });
   
   // === création de l'assistant

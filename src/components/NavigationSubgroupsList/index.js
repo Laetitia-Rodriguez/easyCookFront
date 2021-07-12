@@ -1,39 +1,28 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import NavigationSubgroupLink from '../../containers/NavigationSubgroupLink';
 import PropTypes from 'prop-types';
-
 
 const NavigationSubgroupsList = ({
     foodSubgroupsList,
     selectedFoodGroupId,
-    loadFoodSubgroups,
+    link
 }) => {
 
-    useEffect (() => {
-        loadFoodSubgroups();
-    }, []);
-
-    console.log(foodSubgroupsList);
-  
-
+        console.log(selectedFoodGroupId);
         return (
             foodSubgroupsList.filter(subgroup => subgroup.food_group_id === selectedFoodGroupId)
                 .map(subgroup => (
                     <NavigationSubgroupLink
-                        key={subgroup.food_group_id}
+                        key={subgroup.food_subgroup_id}
                         name={subgroup.food_subgroup}
-                         />
+                        link={link}
+                        subgroup
+                    />
                 ))
-        )                
+        )  ;          
 }
 
-NavigationSubgroupsList.propTypes = {
-    loadFoodSubgroups: PropTypes.func.isRequired,
-    foodSubgroupsList: PropTypes.arrayOf(
-        PropTypes.shape({
-            food_subgroup: PropTypes.string.isRequired,
-        }).isRequired,
-      ).isRequired,
+NavigationSubgroupsList.propTypes = {  
     selectedFoodGroupId: PropTypes.string,
     
 };

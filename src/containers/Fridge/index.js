@@ -13,6 +13,7 @@ const mapStateToProps = (state) => {
   return {
     noGroupReturned: state.fridge.noGroupReturned,
     foodGroupsList: state.fridge.foodGroupsList,
+    
   }    
 };
   
@@ -21,6 +22,7 @@ const mapStateToProps = (state) => {
         loadFoodGroups: () => {
           dispatch(getFoodGroups());
         },
+        
   });
   
   // === création de l'assistant
