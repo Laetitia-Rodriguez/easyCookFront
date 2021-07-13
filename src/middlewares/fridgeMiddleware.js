@@ -8,6 +8,10 @@ import {
     displayFoodSubgroups, 
     noSubgroupReturned,
     foodSubgroupsReturned,
+    GET_PRODUCTS,
+    displayProducts,
+    noProductReturned,
+    productsReturned,
 
 } from '../actions/fridge';
 
@@ -39,6 +43,22 @@ const fridgeMiddleware = (store) => (next) => (action) => {
             .catch((error) => {
               console.log(error);
               store.dispatch(noSubgroupReturned());
+            })
+            .finally(() => {
+            });
+            next(action);
+            break;
+        }
+
+        case GET_PRODUCTS: {
+          axios.get('http://127.0.0.1:8000/api/products')
+            .then((response) => {
+                // console.log(response);
+                store.dispatch(displayProducts(response.data));
+                store.dispatch(productsReturned());
+              })
+            .catch((error) => {
+              store.dispatch(noProductReturned());
             })
             .finally(() => {
             });

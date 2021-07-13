@@ -7,15 +7,16 @@ import NavigationGroup from '../../components/NavigationGroup';
 import { setSelectedGroup, getFoodSubgroups, isOpen } from '../../actions/fridge';
 
 // MapStateToProps is to read something in the state
-const mapStateToProps = (state) => (
-    {
+const mapStateToProps = (state) => {
+    console.log(state);
+    return {
         foodSubgroupsReturned: state.fridge.foodSubgroupsReturned,
         selectedFoodGroupId: state.fridge.selectedFoodGroupId,
         foodGroupsList: state.fridge.foodGroupsList,
         foodSubgroupsList: state.fridge.foodSubgroupsList,
         isOpen: state.fridge.isOpen,
     }
-);
+};
   
 // MapDispatchToProps is to dispatch actions in store direction (updating state)
 const mapDispatchToProps = (dispatch) => ({  

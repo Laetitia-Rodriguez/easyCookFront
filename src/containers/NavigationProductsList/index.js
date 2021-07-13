@@ -1,14 +1,14 @@
 import { connect } from 'react-redux';
 
 // Import display component
-import NavigationSubgroupsList from '../../components/NavigationSubgroupsList';
+import NavigationProductsList from '../../components/NavigationProductsList';
 
 // MapStateToProps is to read something in the state
 const mapStateToProps = (state) => {
    console.log(state);
    return {
-      foodSubgroupsList: state.fridge.foodSubgroupsList,
-      selectedFoodGroupId: state.fridge.selectedFoodGroupId,
+      productsList: state.fridge.productsList,
+      selectedFoodSubgroupId: state.fridge.selectedFoodSubgroupId,
    }
 };
   
@@ -18,4 +18,4 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 // === création de l'assistant
-export default connect(mapStateToProps, mapDispatchToProps)(NavigationSubgroupsList);
+export default connect(mapStateToProps, mapDispatchToProps)(NavigationProductsList);

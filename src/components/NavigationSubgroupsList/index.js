@@ -15,9 +15,11 @@ const NavigationSubgroupsList = ({
                 <NavigationSubgroupLink
                     key={subgroup.food_subgroup_id}
                     name={subgroup.food_subgroup}
+                    id={subgroup.food_subgroup_id}
                     link={link}
-                    subgroup
+                    {... subgroup}
                     className="navigationSubgroup__link"
+                    {... foodSubgroupsList}
                 />
             ))
     );          

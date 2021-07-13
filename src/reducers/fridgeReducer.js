@@ -1,5 +1,4 @@
 import { 
-    
     DISPLAY_FOOD_GROUPS,
     NO_GROUP_RETURNED,
     SET_SELECTED_GROUP,
@@ -7,6 +6,11 @@ import {
     NO_SUBGROUP_RETURNED,
     FOOD_SUBGROUPS_RETURNED,
     IS_OPEN,
+    SET_SELECTED_SUBGROUP,
+    SUBGROUP_IS_OPEN,
+    DISPLAY_PRODUCTS,
+    NO_PRODUCT_RETURNED,
+    PRODUCTS_RETURNED,
 } from '../actions/fridge';
 
 const initialState = {
@@ -18,6 +22,11 @@ const initialState = {
     selectedFoodGroupId: null,
     foodSubgroupsReturned: false,
     isOpen:false,
+    selectedFoodSubgroupId: null,
+    subgroupIsOpen: false,
+    productsList: [],
+    noProductReturned: false,
+    productsReturned: false,
 };
 
 function fridgeReducer(state = initialState, action = {}) {
@@ -64,6 +73,37 @@ function fridgeReducer(state = initialState, action = {}) {
                 ...state,
                 isOpen: !state.isOpen,
             };
+
+        case SET_SELECTED_SUBGROUP:
+            return {
+                ...state,
+                selectedFoodSubgroupId: action.food_subgroup_id,
+            };
+
+        case SUBGROUP_IS_OPEN:
+            return {
+                ...state,
+                subgroupIsOpen: !state.subgroupIsOpen,
+            };
+
+        case DISPLAY_PRODUCTS:
+            return {
+                ...state,
+                productsList: action.productsListArray,
+            };
+
+        case NO_PRODUCT_RETURNED:
+            return {
+                ...state,
+                noProductReturned: true,
+            };
+        
+        case PRODUCTS_RETURNED:
+            return {
+                ...state,
+                productsReturned: true,
+            };
+    
     
         default:
             return state;
