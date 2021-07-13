@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
+// Local import
+import './navigationGroup.css';
 import NavigationSubgroupsList from '../../containers/NavigationSubgroupsList';
 
 const NavigationGroup = ({
@@ -13,6 +15,8 @@ const NavigationGroup = ({
     selectedFoodGroupId,
     foodGroupsList,
     foodSubgroupsList,
+    isOpen,
+    clickOnAGroup,
 }) => {
 
     useEffect (() => {
@@ -21,6 +25,7 @@ const NavigationGroup = ({
 
     const handleClick = (event) => {
         selectFoodGroup(food_group_id);
+        clickOnAGroup();
     } 
     
     console.log(food_group_id);
@@ -30,8 +35,9 @@ const NavigationGroup = ({
     };
 
     return (
-        <div className="navigation_link">
+        <div className="navigation-link__container">
             <a 
+                className="navigation-link__group"
                 href={link}
                 onClick={(event) => {
                     handleClick(food_group_id);
@@ -39,8 +45,8 @@ const NavigationGroup = ({
             >
                 {title}
             </a>
-            <div>
-            {foodSubgroupsReturned && (food_group_id === selectedFoodGroupId) &&
+            <div className="navigationSubgroups__container">
+            {foodSubgroupsReturned && isOpen && (food_group_id === selectedFoodGroupId) &&
                 (<NavigationSubgroupsList group {... foodGroupsList} {... foodSubgroupsList} />)
             }
             </div>
@@ -61,6 +67,8 @@ NavigationGroup.propTypes = {
         food_subgroup_id: PropTypes.number.isRequired,
     }).isRequired,
     ).isRequired,
+    isOpen: PropTypes.bool,
+    clickOnAGroup: PropTypes.func,
 };
  
 export default NavigationGroup;

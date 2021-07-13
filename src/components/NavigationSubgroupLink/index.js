@@ -1,3 +1,5 @@
+// Local import
+import './navigationSubgroupLink.css';
 
 const NavigationSubgroupLink= ({
     name,
@@ -5,8 +7,10 @@ const NavigationSubgroupLink= ({
 }) => {
     console.log(subgroup);
     return (
-        <div className="navigation_subgroup" id={name}>
-            {name}
+        <div className="navigation-subgroup__container">
+            <div className="navigation-link__subgroup" id={name}>
+                {name}
+            </div>
         </div>
     )
 }

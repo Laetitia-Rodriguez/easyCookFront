@@ -9,7 +9,7 @@ const NavigationGroupsList = ({
     console.log(foodGroupsList);
 
     return (
-        <div className="navigation_group">
+        <div className="navigation-group__container">
             {foodGroupsList.map((group) => (
                 <NavigationGroup 
                     key={group.food_group_id}

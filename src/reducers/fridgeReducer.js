@@ -6,6 +6,7 @@ import {
     DISPLAY_FOOD_SUBGROUPS, 
     NO_SUBGROUP_RETURNED,
     FOOD_SUBGROUPS_RETURNED,
+    IS_OPEN,
 } from '../actions/fridge';
 
 const initialState = {
@@ -16,13 +17,12 @@ const initialState = {
     noSubgroupReturned: false,
     selectedFoodGroupId: null,
     foodSubgroupsReturned: false,
+    isOpen:false,
 };
 
 function fridgeReducer(state = initialState, action = {}) {
     switch (action.type) {
 
-       
-        
         case DISPLAY_FOOD_GROUPS:
             return {
                 ...state,
@@ -57,6 +57,12 @@ function fridgeReducer(state = initialState, action = {}) {
             return {
                 ...state,
                 foodSubgroupsReturned: true,
+            };
+
+        case IS_OPEN:
+            return {
+                ...state,
+                isOpen: !state.isOpen,
             };
     
         default:

@@ -1,0 +1,23 @@
+.navigation-subgroup__container {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navigation-link__subgroup {
+    border: 1px solid black;
+    border-radius: 2px;
+    box-shadow:grey 1px 1px 1px;
+    padding: 0.3em;
+    color:white;
+    background-color:#bc662d;
+    text-decoration: none;
+    justify-content: center;
+}
+
+
+
+
+
+

@@ -8,6 +8,8 @@ export const DISPLAY_FOOD_SUBGROUPS = 'DISPLAY_FOOD_SUBGROUPS';
 export const NO_SUBGROUP_RETURNED = 'NO_SUBGROUP_RETURNED';
 export const FOOD_SUBGROUPS_RETURNED = 'FOOD_SUBGROUPS_RETURNED';
 export const SET_SELECTED_GROUP = 'SET_SELECTED_GROUP';
+export const IS_OPEN = 'IS_OPEN';
+
 
 // Action creators
 export const getFoodGroups = () => ({
@@ -44,6 +46,11 @@ export const setSelectedGroup = (food_group_id) => ({
   type: SET_SELECTED_GROUP,
   food_group_id,
 });
+
+export const isOpen = () => ({
+  type: IS_OPEN,
+});
+
 
 
 
