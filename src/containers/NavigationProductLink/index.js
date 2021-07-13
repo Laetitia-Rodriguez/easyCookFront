@@ -9,6 +9,10 @@ const mapStateToProps = (state) => {
     return {
         noProductReturned: state.fridge.noProductReturned,
         selectedFoodSubgroupId: state.fridge.selectedFoodSubgroupId,
+        productsReturned: state.fridge.productsReturned, 
+        subgroupIsOpen: state.fridge.subgroupIsOpen,
+        foodSubgroupsList: state.fridge.foodSubgroupsList,
+        productsList: state.fridge.productsList,
     }
     
 };

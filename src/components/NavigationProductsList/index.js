@@ -15,9 +15,11 @@ const NavigationProductsList = ({
                 <NavigationProductLink
                     key={product.id}
                     name={product.name}
+                    id={product.id}
                     link={link}
-                    product
+                    product={product}
                     className="navigationProduct__link"
+                    /* {... productsList} */
                 />
             ))
     );          
