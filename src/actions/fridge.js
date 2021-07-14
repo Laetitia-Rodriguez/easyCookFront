@@ -15,6 +15,7 @@ export const GET_PRODUCTS = 'GET_PRODUCTS';
 export const DISPLAY_PRODUCTS = 'DISPLAY_PRODUCTS';
 export const NO_PRODUCT_RETURNED = 'NO_PRODUCT_RETURNED';
 export const PRODUCTS_RETURNED = 'PRODUCTS_RETURNED';
+export const SET_FAVORITE = 'SET_FAVORITE' ;
 
 // Action creators
 export const getFoodGroups = () => ({
@@ -81,6 +82,11 @@ export const noProductReturned = () => ({
 export const productsReturned = () => ({
   type: PRODUCTS_RETURNED,
 });
+
+export const setFavorite = (id) => ({
+  type: SET_FAVORITE,
+  id,
+})
 
 
 

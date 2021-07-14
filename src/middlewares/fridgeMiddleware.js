@@ -12,6 +12,7 @@ import {
     displayProducts,
     noProductReturned,
     productsReturned,
+    SET_FAVORITE,
 
 } from '../actions/fridge';
 
@@ -59,6 +60,21 @@ const fridgeMiddleware = (store) => (next) => (action) => {
               })
             .catch((error) => {
               store.dispatch(noProductReturned());
+            })
+            .finally(() => {
+            });
+            next(action);
+            break;
+        }
+
+        case SET_FAVORITE: {
+          const selectedFavoriteId = store.getState().fridge;
+          axios.put(`http://127.0.0.1:8000/api/products/${selectedFavoriteId}/status`)
+            .then((response) => {
+                // console.log(response);
+              })
+            .catch((error) => {
+              console.log(error);
             })
             .finally(() => {
             });

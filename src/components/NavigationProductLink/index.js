@@ -13,13 +13,17 @@ const NavigationProductLink = ({
     name,
     product,
     noProductReturned,
-    isOn, 
-    manageClick 
+    selectedFavoriteId, 
+    manageSelectedFavorite,
 }) => {
     console.log(product);
 
+    const handleClick = (event) => {
+        manageSelectedFavorite(product.id);
+    }
+
     let productFavoriteIcon = 'product__favorite-icon';
-    if (isOn) {
+    if (product.id === selectedFavoriteId) {
         productFavoriteIcon += ' product__favorite-icon--on';
     }
 
@@ -45,9 +49,8 @@ const NavigationProductLink = ({
                         <FontAwesomeIcon 
                             icon={faHeart} 
                             className={productFavoriteIcon}
-                            /* {productFavoriteIcon} */
                             onClick={(event) => {
-                                manageClick();
+                                handleClick(product.id);
                             }}
                         />
                     </div>
@@ -64,8 +67,8 @@ const NavigationProductLink = ({
 
 NavigationProductLink.propTypes = {
     noProductReturned: PropTypes.bool,
-    isOn: PropTypes.bool,
-    manageClick: PropTypes.func,
+    selectedFavoriteId: PropTypes.number,
+    manageSelectedFavorite: PropTypes.func,
 }
 
 export default NavigationProductLink;
