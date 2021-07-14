@@ -9,12 +9,13 @@ const mapStateToProps = (state) => (
     {
         resultsList: state.search.resultsList,
         resultsReturned: state.search.resultsReturned,
+        errorReturned: state.search.errorReturned,
     }
   );
   
-  // MapDispatchToProps is to dispatch actions in store direction (updating state)
-  const mapDispatchToProps = (dispatch) => ({
-  });
-  
-  // === création de l'assistant
-  export default connect(mapStateToProps, mapDispatchToProps)(Results);
+// MapDispatchToProps is to dispatch actions in store direction (updating state)
+const mapDispatchToProps = (dispatch) => ({
+});
+
+// === création de l'assistant
+export default connect(mapStateToProps, mapDispatchToProps)(Results);

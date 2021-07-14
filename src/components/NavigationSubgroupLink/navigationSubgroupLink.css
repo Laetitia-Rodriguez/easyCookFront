@@ -1,0 +1,35 @@
+
+.navigation-link__subgroup {
+    border: 1px solid black;
+    border-radius: 2px;
+    box-shadow:grey 1px 1px 1px;
+    padding: 0.7em;
+    background-color:#bc662d;
+    color:white;
+    width:80%;
+    font-size: 1.3em;
+    text-decoration: none;
+    margin: auto;
+}
+
+.navigation-link__subgroup:hover {
+    font-weight: bold; 
+    color:white;
+    text-decoration: underline;
+}
+
+.navigation-products__container {
+    width:100%;
+    margin-top: 1.5em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: space-evenly;
+}
+
+
+
+
+
+

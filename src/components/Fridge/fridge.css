@@ -1,12 +1,48 @@
-.fridge li {
-    list-style: none;
+.fridge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fridge__text {
+    font-size: 1.3em;
 }
 
 .fridge__submit-container {
+    width:100%;
     display: flex;
     flex-direction: row;
+    margin-top: 2em;
 }
 
-.fridge input {
+
+.fridge__submit-button {
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 2px;
+    box-shadow:grey 1px 1px 1px;
+    padding: 0.3em;
+    color:white;
+    background-color: #04cc04;
+    margin-bottom: 2em;
     margin-right: 1em;
+    font-size: 1.3em;
+    justify-content: flex-start;
 }
+
+.fridge__button {
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 2px;
+    box-shadow:grey 1px 1px 1px;
+    background-color: #04cc04;
+    color:white;
+    height:2.3em;
+}
+
+
+
+/* #bc662d
+   #abc246
+   #5c9404
+   */

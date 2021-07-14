@@ -21,6 +21,7 @@ const Recipe = ({resultsList}) => {
           <p className="recipe__ingredients" >{recipe.ingredientsList}</p>
           <p className="recipe__title">Recette</p>
           <p className="recipe__steps">{recipe.steps}</p>
+          <a className="recipe__return-button" href="/">Accueil</a>
       </div>
   );
 };

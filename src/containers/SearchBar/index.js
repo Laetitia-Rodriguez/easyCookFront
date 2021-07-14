@@ -9,12 +9,12 @@ import { updateSearchInput, getResults } from '../../actions/search';
 // MapStateToProps is to read something in the state
 const mapStateToProps = (state) => (
     {
-      search: state.search.search,
+        search: state.search.search,
     }
-  );
+);
   
-  // MapDispatchToProps is to dispatch actions in store direction (updating state)
-  const mapDispatchToProps = (dispatch) => ({
+// MapDispatchToProps is to dispatch actions in store direction (updating state)
+const mapDispatchToProps = (dispatch) => ({
     // function wich is dispatching the action
     setSearchInput: (newValue, name) => {
       dispatch(updateSearchInput(newValue, name));
@@ -22,7 +22,7 @@ const mapStateToProps = (state) => (
     manageSubmit: () => {
       dispatch(getResults());
     },
-  });
-  
-  // === création de l'assistant
-  export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);
+});
+
+// === création de l'assistant
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);

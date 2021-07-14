@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 // Local import
-import Fridge from '../../components/Fridge';
+import Fridge from '../../containers/Fridge';
 import Results from '../../containers/Results';
 import Recipe from '../../containers/Recipe';
 import LegalMentions from '../../components/LegalMentions';

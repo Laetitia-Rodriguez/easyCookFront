@@ -1,4 +1,4 @@
-import { UPDATE_SEARCH_INPUT, GET_RESULTS, RESULTS_RETURNED, DISPLAY_SEARCH_RESULTS, } from '../actions/search';
+import { UPDATE_SEARCH_INPUT, GET_RESULTS, RESULTS_RETURNED, DISPLAY_SEARCH_RESULTS, ERROR_RETURNED } from '../actions/search';
 
 const initialState = {
     // Initial state, before actions
@@ -7,6 +7,7 @@ const initialState = {
     resultsReturned: false,
     redirect: false,
     resultsCounter: 0,
+    errorReturned: false,
 };
 
 function searchReducer(state = initialState, action = {}) {
@@ -37,7 +38,14 @@ function searchReducer(state = initialState, action = {}) {
                 resultsReturned: true,
                 resultsCounter: action.resultsArray.length,
             };
-        
+
+        case ERROR_RETURNED:
+            return {
+                ...state,
+                errorReturned: true,
+            };
+
+
         default:
             return state;
     }
