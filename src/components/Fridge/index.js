@@ -23,6 +23,8 @@ const Fridge = ({
 
     return (
         <div className="fridge">
+            <h1 className="fridge__title">Mon frigo</h1>
+            <p className="fridge__text">Sélectionner mes ingrédients</p>
             <NavigationGroupsList {... foodGroupsList} link />
             {noGroupReturned && (
                 <p>Erreur de connexion à la base de données</p>

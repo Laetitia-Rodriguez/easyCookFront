@@ -1,6 +1,9 @@
 import NavigationGroup from '../../containers/NavigationGroup';
 import PropTypes from 'prop-types';
 
+// Local import
+import './navigationGroupsList.css';
+
 const NavigationGroupsList = ({
     foodGroupsList,
     selectFoodGroup,
@@ -9,7 +12,7 @@ const NavigationGroupsList = ({
     console.log(foodGroupsList);
 
     return (
-        <div className="navigation-group__container">
+        <div className="navigation-groups__container">
             {foodGroupsList.map((group) => (
                 <NavigationGroup 
                     key={group.food_group_id}

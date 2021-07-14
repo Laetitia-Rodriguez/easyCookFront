@@ -35,7 +35,7 @@ const NavigationSubgroupLink= ({
     };
 
     return (
-        <div className="navigation-subgroup__container">
+        <>
             <a 
                 className="navigation-link__subgroup" 
                 href={link}
@@ -46,13 +46,12 @@ const NavigationSubgroupLink= ({
             >
                 {name}
             </a>
-            <div className="navigationProducts__container">
-            {productsReturned && subgroupIsOpen && (food_subgroup_id === selectedFoodSubgroupId) &&
-                (<NavigationProductsList subgroup {... foodSubgroupsList} {... productsList} />)
-            }
-
+            <div className="navigation-products__container">
+                {productsReturned && subgroupIsOpen && (food_subgroup_id === selectedFoodSubgroupId) &&
+                    (<NavigationProductsList subgroup {... foodSubgroupsList} {... productsList} />)
+                }
             </div>
-        </div>
+       </>
     )
 }
 

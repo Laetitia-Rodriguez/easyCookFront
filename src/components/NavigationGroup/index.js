@@ -36,7 +36,7 @@ const NavigationGroup = ({
 
     return (
         <div className="navigation-link__container">
-            <a 
+            <div 
                 className="navigation-link__group"
                 href={link}
                 onClick={(event) => {
@@ -44,8 +44,8 @@ const NavigationGroup = ({
                 }}
             >
                 {title}
-            </a>
-            <div className="navigationSubgroups__container">
+            </div>
+            <div className="navigation-subgroups__container">
             {foodSubgroupsReturned && isOpen && (food_group_id === selectedFoodGroupId) &&
                 (<NavigationSubgroupsList group {... foodGroupsList} {... foodSubgroupsList} />)
             }
