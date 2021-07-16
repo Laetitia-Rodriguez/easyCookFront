@@ -18,12 +18,12 @@ const NavigationProductsList = ({
                     id={product.id}
                     link={link}
                     product={product}
-                    className="navigationProduct__link"
+                    className="navigation-product__link"
                     /* {... productsList} */
                 />
-            ))
+            )) 
     );          
-}
+};
 
 NavigationProductsList.propTypes = {  
     productsList: PropTypes.arrayOf(

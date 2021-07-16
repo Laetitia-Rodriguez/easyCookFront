@@ -23,7 +23,7 @@ const NavigationSubgroupsList = ({
                 />
             ))
     );          
-}
+};
 
 NavigationSubgroupsList.propTypes = {  
     foodSubgroupsList: PropTypes.arrayOf(

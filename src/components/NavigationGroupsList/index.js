@@ -23,8 +23,8 @@ const NavigationGroupsList = ({
                 />
             ))}
         </div>
-    )
-}
+    );
+};
 
 NavigationGroupsList.propTypes = {
     foodGroupsList: PropTypes.arrayOf(

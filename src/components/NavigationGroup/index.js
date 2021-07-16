@@ -51,8 +51,8 @@ const NavigationGroup = ({
             }
             </div>
         </div>
-    )
-}
+    );
+};
 
 NavigationGroup.propTypes = {
     title: PropTypes.string,
