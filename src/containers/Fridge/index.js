@@ -8,7 +8,7 @@ import {  getFoodGroups } from '../../actions/fridge';
 
 // MapStateToProps is to read something in the state
 const mapStateToProps = (state) => {
-    console.log(state);
+    // console.log(state);
     return {
         noGroupReturned: state.fridge.noGroupReturned,
         foodGroupsList: state.fridge.foodGroupsList,

@@ -7,13 +7,12 @@ import NavigationSubgroupsList from '../../containers/NavigationSubgroupsList';
 
 const NavigationGroup = ({
     link,
-    title,
+    title, 
+    id,
     loadFoodSubgroups,
     manageFoodGroup,
-    food_group_id,
     foodSubgroupsReturned,
     selectedFoodGroupId,
-    foodGroupsList,
     foodSubgroupsList,
     isOpen,
     clickOnAGroup,
@@ -24,14 +23,14 @@ const NavigationGroup = ({
     }, []);
 
     const handleClick = (event) => {
-        selectFoodGroup(food_group_id);
+        selectFoodGroup(id);
         clickOnAGroup();
     } 
     
-    console.log(food_group_id);
+    // console.log(food_group_id);
 
-    const selectFoodGroup = (food_group_id) => {
-        manageFoodGroup(food_group_id);
+    const selectFoodGroup = (id) => {
+        manageFoodGroup(id);
     };
 
     return (
@@ -40,14 +39,14 @@ const NavigationGroup = ({
                 className="navigation-link__group"
                 href={link}
                 onClick={(event) => {
-                    handleClick(food_group_id);
+                    handleClick(id);
                 }}
             >
                 {title}
             </div>
             <div className="navigation-subgroups__container">
-            {foodSubgroupsReturned && isOpen && (food_group_id === selectedFoodGroupId) &&
-                (<NavigationSubgroupsList group {... foodGroupsList} {... foodSubgroupsList} />)
+            {foodSubgroupsReturned && isOpen && (id === selectedFoodGroupId) &&
+                (<NavigationSubgroupsList {... foodSubgroupsList} />)
             }
             </div>
         </div>
@@ -55,20 +54,7 @@ const NavigationGroup = ({
 };
 
 NavigationGroup.propTypes = {
-    title: PropTypes.string,
     loadFoodSubgroups: PropTypes.func.isRequired,
-    food_group_id: PropTypes.number,
-    foodSubgroupsReturned: PropTypes.bool,
-    selectedFoodGroupId: PropTypes.number,
-    foodSubgroupsList: PropTypes.arrayOf(
-    PropTypes.shape({
-        food_subgroup: PropTypes.string.isRequired,
-        food_group_id: PropTypes.string.isRequired,
-        food_subgroup_id: PropTypes.number.isRequired,
-    }).isRequired,
-    ).isRequired,
-    isOpen: PropTypes.bool,
-    clickOnAGroup: PropTypes.func,
 };
  
 export default NavigationGroup;

@@ -15,12 +15,13 @@ const NavigationProductLink = ({
     noProductReturned,
     selectedFavoriteId, 
     manageSelectedFavorite,
+    productsList
 }) => {
-    console.log(product);
+    console.log(productsList);
 
-    /* const handleClick = (event) => {
+    const handleClickOnFavorite = (event) => {
         manageSelectedFavorite(product.id);
-    } */
+    } 
 
     let productFavoriteIcon = 'product__favorite-icon';
     if (product.id === selectedFavoriteId) {
@@ -31,7 +32,7 @@ const NavigationProductLink = ({
         <div className="navigation-product__container">
             <>
                 <img
-                    src={ 'http://127.0.0.1/easyCookAPI/src/utils/images/products/' + product.picture_file_name  }
+                    src={ 'http://127.0.0.1/easyCookAPI/src/utils/images/products/' + product.pictureFileName  }
                     className="product__image" 
                     href={link}
                     id={name}
@@ -49,9 +50,9 @@ const NavigationProductLink = ({
                         <FontAwesomeIcon 
                             icon={faHeart} 
                             className={productFavoriteIcon}
-                            /* onClick={(event) => {
-                                handleClick(product.id);
-                            }} */
+                            onClick={(event) => {
+                                handleClickOnFavorite(product.id);
+                            }}
                         />
                     </div>
                 </div>

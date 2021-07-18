@@ -1,15 +1,15 @@
-import NavigationGroup from '../../containers/NavigationGroup';
 import PropTypes from 'prop-types';
 
 // Local import
 import './navigationGroupsList.css';
+import NavigationGroup from '../../containers/NavigationGroup';
 
 const NavigationGroupsList = ({
     foodGroupsList,
     selectFoodGroup,
 }) => {
 
-    console.log(foodGroupsList);
+    // console.log(foodGroupsList);
 
     return (
         <div className="navigation-groups__container">
@@ -30,7 +30,6 @@ NavigationGroupsList.propTypes = {
     foodGroupsList: PropTypes.arrayOf(
         PropTypes.shape({
             food_group: PropTypes.string.isRequired,
-            food_group_id: PropTypes.number.isRequired,
         }).isRequired,
       ).isRequired,
     selectFoodGroup: PropTypes.func,

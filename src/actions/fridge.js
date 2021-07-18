@@ -1,5 +1,4 @@
 // Action types
-
 export const GET_FOOD_GROUPS = 'GET_FOOD_GROUPS';
 export const DISPLAY_FOOD_GROUPS = 'DISPLAY_FOOD_GROUPS';
 export const NO_GROUP_RETURNED = 'NO_GROUP_RETURNED';
@@ -48,9 +47,9 @@ export const foodSubgroupsReturned = () => ({
   type: FOOD_SUBGROUPS_RETURNED,
 });
 
-export const setSelectedGroup = (food_group_id) => ({
+export const setSelectedGroup = (id) => ({
   type: SET_SELECTED_GROUP,
-  food_group_id,
+  id,
 });
 
 export const isOpen = () => ({

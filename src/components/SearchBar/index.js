@@ -39,7 +39,8 @@ const SearchBar = ({
             </>
         </form>
     );
-}
+};
+
 SearchBar.propTypes = {
     setSearchInput: PropTypes.func.isRequired,
     search: PropTypes.string.isRequired,

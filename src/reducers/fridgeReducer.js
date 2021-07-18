@@ -11,7 +11,7 @@ import {
     DISPLAY_PRODUCTS,
     NO_PRODUCT_RETURNED,
     PRODUCTS_RETURNED,
-    /* DISPLAY_FAVORITES, */
+    DISPLAY_FAVORITES, 
 } from '../actions/fridge';
 
 const initialState = {
@@ -49,7 +49,7 @@ function fridgeReducer(state = initialState, action = {}) {
         case SET_SELECTED_GROUP:
             return {
                 ...state,
-                selectedFoodGroupId: action.food_group_id,
+                selectedFoodGroupId: action.id,
             };
 
         case DISPLAY_FOOD_SUBGROUPS:
@@ -106,11 +106,11 @@ function fridgeReducer(state = initialState, action = {}) {
                 productsReturned: true,
             };
         
-        /* case DISPLAY_FAVORITES:
+        case DISPLAY_FAVORITES:
             return {
                 ...state,
                 favoritesList: action.favoritesListArray,
-            }; */
+            }; 
     
         default:
             return state;

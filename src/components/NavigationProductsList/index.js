@@ -2,15 +2,18 @@ import React from 'react';
 import NavigationProductLink from '../../containers/NavigationProductLink';
 import PropTypes from 'prop-types';
 
+// Local import
+import './navigationProductsList.css';
+
 const NavigationProductsList = ({
     productsList,
     selectedFoodSubgroupId,
-    link
+    link,
 }) => {
 
     console.log(selectedFoodSubgroupId);
     return (
-        productsList.filter(product => product.food_subgroup_id === selectedFoodSubgroupId)
+        productsList.filter(product => product.foodSubgroupId == selectedFoodSubgroupId)
             .map(product => (
                 <NavigationProductLink
                     key={product.id}
@@ -18,10 +21,10 @@ const NavigationProductsList = ({
                     id={product.id}
                     link={link}
                     product={product}
-                    className="navigation-product__link"
+                    className="navigationProduct__link"
                     /* {... productsList} */
                 />
-            )) 
+            ))
     );          
 };
 
@@ -30,7 +33,6 @@ NavigationProductsList.propTypes = {
         PropTypes.shape({
             name: PropTypes.string.isRequired,
             id: PropTypes.number.isRequired,
-            food_subgroup_id: PropTypes.number.isRequired,
         }).isRequired,
         ).isRequired,
     selectedFoodSubgroupId: PropTypes.string,

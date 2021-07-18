@@ -19,7 +19,7 @@ const Fridge = ({
         loadFoodGroups();
     }, []);
 
-    console.log(foodGroupsList);
+    // console.log(foodGroupsList);
 
     return (
         <div className="fridge">
@@ -37,7 +37,7 @@ const Fridge = ({
             </div>
         </div>
     );
-}
+};
 
 Fridge.propTypes = {
     loadFoodGroups: PropTypes.func.isRequired,

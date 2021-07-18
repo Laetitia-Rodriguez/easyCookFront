@@ -35,11 +35,11 @@ const NavigationSubgroupLink= ({
     };
 
     return (
-        <>
+       <>
             <a 
                 className="navigation-link__subgroup" 
                 href={link}
-                id={name}
+                id={food_subgroup_id}
                 onClick={(event) => {
                     handleClick(food_subgroup_id);
                 }}
@@ -48,24 +48,21 @@ const NavigationSubgroupLink= ({
             </a>
             <div className="navigation-products__container">
                 {productsReturned && subgroupIsOpen && (food_subgroup_id === selectedFoodSubgroupId) &&
-                    (<NavigationProductsList subgroup {... foodSubgroupsList} {... productsList} />
-                    )
+                    (<NavigationProductsList {... productsList} />)
                 }
             </div>
-       </>
+            
+
+        </> 
+       
     );
 };
 
 NavigationSubgroupLink.propTypes = {
     loadProducts: PropTypes.func.isRequired,
-    food_subgroup_id: PropTypes.number,
-    productsReturned: PropTypes.bool,
-    selectedFoodSubgroupId: PropTypes.number,
     foodSubgroupsList: PropTypes.arrayOf(
     PropTypes.shape({
         food_subgroup: PropTypes.string.isRequired,
-        food_group_id: PropTypes.string.isRequired,
-        food_subgroup_id: PropTypes.number.isRequired,
     }).isRequired,
     ).isRequired,
     subgroupIsOpen: PropTypes.bool,
