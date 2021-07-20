@@ -13,6 +13,7 @@ import {
     noProductReturned,
     productsReturned,
     SET_FAVORITE,
+    messageOk,
 
 } from '../actions/fridge';
 
@@ -68,10 +69,12 @@ const fridgeMiddleware = (store) => (next) => (action) => {
         }
 
         case SET_FAVORITE: {
-          const selectedFavoriteId = store.getState().fridge;
+          const { selectedFavoriteId } = store.getState().fridge;
+          console.log(selectedFavoriteId);
           axios.put(`http://127.0.0.1:8000/api/products/${selectedFavoriteId}/status`)
             .then((response) => {
                 // console.log(response);
+                store.dispatch(messageOk(response.data));
               })
             .catch((error) => {
               console.log(error);

@@ -14,8 +14,10 @@ export const GET_PRODUCTS = 'GET_PRODUCTS';
 export const DISPLAY_PRODUCTS = 'DISPLAY_PRODUCTS';
 export const NO_PRODUCT_RETURNED = 'NO_PRODUCT_RETURNED';
 export const PRODUCTS_RETURNED = 'PRODUCTS_RETURNED';
-export const SET_FAVORITE = 'SET_FAVORITE' ;
 export const DISPLAY_FAVORITES = 'DISPLAY_FAVORITES' ;
+export const SELECTED_FAVORITE = 'SELECTED_FAVORITE' ;
+export const SET_FAVORITE = 'SET_FAVORITE' ;
+export const MESSAGE_OK = 'MESSAGE_OK';
 
 // Action creators
 export const getFoodGroups = () => ({
@@ -83,13 +85,23 @@ export const productsReturned = () => ({
   type: PRODUCTS_RETURNED,
 });
 
+export const displayFavorites = (id) => ({
+  type: DISPLAY_FAVORITES,
+  id,
+})
+
+export const selectedFavorite = (id) => ({
+  type: SELECTED_FAVORITE,
+  id,
+})
+
 export const setFavorite = (id) => ({
   type: SET_FAVORITE,
   id,
 })
 
-export const displayFavorites = (id) => ({
-  type: DISPLAY_FAVORITES,
+export const messageOk = (id) => ({
+  type: MESSAGE_OK,
   id,
 })
 

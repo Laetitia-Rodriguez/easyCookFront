@@ -12,6 +12,7 @@ import {
     NO_PRODUCT_RETURNED,
     PRODUCTS_RETURNED,
     DISPLAY_FAVORITES, 
+    SELECTED_FAVORITE,
 } from '../actions/fridge';
 
 const initialState = {
@@ -29,6 +30,7 @@ const initialState = {
     noProductReturned: false,
     productsReturned: false,
     favoritesListId: [],
+    selectedFavoriteId: null,
 };
 
 function fridgeReducer(state = initialState, action = {}) {
@@ -106,7 +108,13 @@ function fridgeReducer(state = initialState, action = {}) {
                 ...state,
                 productsReturned: true,
             };
-        
+
+        case SELECTED_FAVORITE:
+            return {
+                ...state,
+                selectedFavoriteId: action.id,
+            };
+
         case DISPLAY_FAVORITES:
 
             const favoriteIndex = state.favoritesListId.findIndex(id => id === action.id)
@@ -127,8 +135,8 @@ function fridgeReducer(state = initialState, action = {}) {
                 }
             }
 
-            return nextState || state
-                
+            return nextState || state   
+
         default:
             return state;
     }
