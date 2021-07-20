@@ -1,5 +1,4 @@
 // Action types
-
 export const GET_FOOD_GROUPS = 'GET_FOOD_GROUPS';
 export const DISPLAY_FOOD_GROUPS = 'DISPLAY_FOOD_GROUPS';
 export const NO_GROUP_RETURNED = 'NO_GROUP_RETURNED';
@@ -15,6 +14,10 @@ export const GET_PRODUCTS = 'GET_PRODUCTS';
 export const DISPLAY_PRODUCTS = 'DISPLAY_PRODUCTS';
 export const NO_PRODUCT_RETURNED = 'NO_PRODUCT_RETURNED';
 export const PRODUCTS_RETURNED = 'PRODUCTS_RETURNED';
+export const DISPLAY_FAVORITES = 'DISPLAY_FAVORITES' ;
+export const SELECTED_FAVORITE = 'SELECTED_FAVORITE' ;
+export const SET_FAVORITE = 'SET_FAVORITE' ;
+export const MESSAGE_OK = 'MESSAGE_OK';
 
 // Action creators
 export const getFoodGroups = () => ({
@@ -47,9 +50,9 @@ export const foodSubgroupsReturned = () => ({
   type: FOOD_SUBGROUPS_RETURNED,
 });
 
-export const setSelectedGroup = (food_group_id) => ({
+export const setSelectedGroup = (id) => ({
   type: SET_SELECTED_GROUP,
-  food_group_id,
+  id,
 });
 
 export const isOpen = () => ({
@@ -81,6 +84,26 @@ export const noProductReturned = () => ({
 export const productsReturned = () => ({
   type: PRODUCTS_RETURNED,
 });
+
+export const displayFavorites = (id) => ({
+  type: DISPLAY_FAVORITES,
+  id,
+})
+
+export const selectedFavorite = (id) => ({
+  type: SELECTED_FAVORITE,
+  id,
+})
+
+export const setFavorite = (id) => ({
+  type: SET_FAVORITE,
+  id,
+})
+
+export const messageOk = (id) => ({
+  type: MESSAGE_OK,
+  id,
+})
 
 
 

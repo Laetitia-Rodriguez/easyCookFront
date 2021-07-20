@@ -31,9 +31,9 @@ Recipe.propTypes = {
       PropTypes.shape({
         id: PropTypes.number.isRequired,
         name: PropTypes.string.isRequired,
-        // picture_file_name: PropTypes.string.isRequired,
-        // ingredients_list: PropTypes.string.isRequired,
-        // steps: PropTypes.string.isRequired,
+        picture_file_name: PropTypes.string.isRequired,
+        ingredients_list: PropTypes.string.isRequired,
+        steps: PropTypes.string.isRequired,
       }).isRequired,
     ).isRequired,
   };

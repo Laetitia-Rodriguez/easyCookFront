@@ -8,11 +8,10 @@ import { setSelectedGroup, getFoodSubgroups, isOpen } from '../../actions/fridge
 
 // MapStateToProps is to read something in the state
 const mapStateToProps = (state) => {
-    console.log(state);
+    // console.log(state);
     return {
         foodSubgroupsReturned: state.fridge.foodSubgroupsReturned,
         selectedFoodGroupId: state.fridge.selectedFoodGroupId,
-        foodGroupsList: state.fridge.foodGroupsList,
         foodSubgroupsList: state.fridge.foodSubgroupsList,
         isOpen: state.fridge.isOpen,
     }
@@ -23,8 +22,8 @@ const mapDispatchToProps = (dispatch) => ({
     loadFoodSubgroups: () => {
         dispatch(getFoodSubgroups());
     },
-    manageFoodGroup: (food_group_id) => {
-        dispatch(setSelectedGroup(food_group_id));
+    manageFoodGroup: (id) => {
+        dispatch(setSelectedGroup(id));
     },
     clickOnAGroup: () => {
         dispatch(isOpen());

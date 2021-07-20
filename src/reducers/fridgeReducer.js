@@ -11,6 +11,8 @@ import {
     DISPLAY_PRODUCTS,
     NO_PRODUCT_RETURNED,
     PRODUCTS_RETURNED,
+    DISPLAY_FAVORITES, 
+    SELECTED_FAVORITE,
 } from '../actions/fridge';
 
 const initialState = {
@@ -27,9 +29,12 @@ const initialState = {
     productsList: [],
     noProductReturned: false,
     productsReturned: false,
+    favoritesListId: [],
+    selectedFavoriteId: null,
 };
 
 function fridgeReducer(state = initialState, action = {}) {
+    let nextState
     switch (action.type) {
 
         case DISPLAY_FOOD_GROUPS:
@@ -47,7 +52,7 @@ function fridgeReducer(state = initialState, action = {}) {
         case SET_SELECTED_GROUP:
             return {
                 ...state,
-                selectedFoodGroupId: action.food_group_id,
+                selectedFoodGroupId: action.id,
             };
 
         case DISPLAY_FOOD_SUBGROUPS:
@@ -103,8 +108,35 @@ function fridgeReducer(state = initialState, action = {}) {
                 ...state,
                 productsReturned: true,
             };
-    
-    
+
+        case SELECTED_FAVORITE:
+            return {
+                ...state,
+                selectedFavoriteId: action.id,
+            };
+
+        case DISPLAY_FAVORITES:
+
+            const favoriteIndex = state.favoritesListId.findIndex(id => id === action.id)
+            
+            if (favoriteIndex !== -1) {
+                // The product is already in the favorites list, we delete it
+                nextState = {
+                    ...state,
+                    favoritesListId : state.favoritesListId.filter((id, index) => index !== favoriteIndex)
+                }
+            }
+            
+            else {
+                // The product isn't in the favorites list, we add it
+                nextState = {
+                    ...state,
+                    favoritesListId: [...state.favoritesListId, action.id]
+                }
+            }
+
+            return nextState || state   
+
         default:
             return state;
     }

@@ -14,7 +14,7 @@ const Results = ({
 }) => {
     return (
         <div className="results">
-            { resultsReturned && (
+            {resultsReturned && (
                 <>
                     <Counter />
                     <ul className="results__list">
@@ -36,7 +36,7 @@ const Results = ({
                     </ul>
                 </>
             )}
-            { errorReturned && (
+            {errorReturned && (
                 <p>Une erreur est apparue.<br/> Veuillez recommencer.</p>
             )}
             <a className="results__return-button" href="/">Accueil</a>

@@ -8,7 +8,7 @@ const NavigationSubgroupsList = ({
     link
 }) => {
 
-    console.log(selectedFoodGroupId);
+    // console.log(selectedFoodGroupId);
     return (
         foodSubgroupsList.filter(subgroup => subgroup.food_group_id === selectedFoodGroupId)
             .map(subgroup => (
@@ -23,17 +23,14 @@ const NavigationSubgroupsList = ({
                 />
             ))
     );          
-}
+};
 
 NavigationSubgroupsList.propTypes = {  
     foodSubgroupsList: PropTypes.arrayOf(
         PropTypes.shape({
             food_subgroup: PropTypes.string.isRequired,
-            food_group_id: PropTypes.string.isRequired,
-            food_subgroup_id: PropTypes.number.isRequired,
         }).isRequired,
-        ).isRequired,
-    selectedFoodGroupId: PropTypes.string,
+    ).isRequired,
 };
 
 export default NavigationSubgroupsList;

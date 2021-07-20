@@ -13,21 +13,32 @@ const NavigationProductLink = ({
     name,
     product,
     noProductReturned,
-    isOn, 
-    manageClick 
+    favoritesListId, 
+    manageSelectedFavorite,
+    productsList
 }) => {
-    console.log(product);
+    console.log(productsList);
+
+    const handleClickOnFavorite = (event) => {
+        manageSelectedFavorite(product.id);
+    } 
 
     let productFavoriteIcon = 'product__favorite-icon';
-    if (isOn) {
+    
+    if (favoritesListId.includes(product.id)) {
         productFavoriteIcon += ' product__favorite-icon--on';
-    }
+    } 
 
     return (
-        <div className="navigation-product__container">
+        <div 
+            className="navigation-product__container"
+            onClick={(event) => {
+                handleClickOnFavorite(product.id);
+            }}
+        >
             <>
                 <img
-                    src={ 'http://127.0.0.1/easyCookAPI/src/utils/images/products/' + product.picture_file_name  }
+                    src={ 'http://127.0.0.1/easyCookAPI/src/utils/images/products/' + product.pictureFileName  }
                     className="product__image" 
                     href={link}
                     id={name}
@@ -45,10 +56,6 @@ const NavigationProductLink = ({
                         <FontAwesomeIcon 
                             icon={faHeart} 
                             className={productFavoriteIcon}
-                            /* {productFavoriteIcon} */
-                            onClick={(event) => {
-                                manageClick();
-                            }}
                         />
                     </div>
                 </div>
@@ -59,13 +66,13 @@ const NavigationProductLink = ({
                 }
             </div>
         </div>
-    )          
-}
+    );          
+};
 
 NavigationProductLink.propTypes = {
     noProductReturned: PropTypes.bool,
-    isOn: PropTypes.bool,
-    manageClick: PropTypes.func,
-}
+    selectedFavoriteId: PropTypes.number,
+    manageSelectedFavorite: PropTypes.func,
+};
 
 export default NavigationProductLink;
