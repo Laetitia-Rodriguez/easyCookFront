@@ -24,12 +24,18 @@ const NavigationProductLink = ({
     } 
 
     let productFavoriteIcon = 'product__favorite-icon';
-    if (product.id === selectedFavoriteId) {
+    
+    if (selectedFavoriteId.includes(product.id)) {
         productFavoriteIcon += ' product__favorite-icon--on';
     } 
 
     return (
-        <div className="navigation-product__container">
+        <div 
+            className="navigation-product__container"
+            onClick={(event) => {
+                handleClickOnFavorite(product.id);
+            }}
+        >
             <>
                 <img
                     src={ 'http://127.0.0.1/easyCookAPI/src/utils/images/products/' + product.pictureFileName  }
@@ -50,9 +56,6 @@ const NavigationProductLink = ({
                         <FontAwesomeIcon 
                             icon={faHeart} 
                             className={productFavoriteIcon}
-                            onClick={(event) => {
-                                handleClickOnFavorite(product.id);
-                            }}
                         />
                     </div>
                 </div>

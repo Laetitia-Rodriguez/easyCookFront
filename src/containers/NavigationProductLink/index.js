@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 // Import display component
 import NavigationProductLink from '../../components/NavigationProductLink';
-import { setFavorite } from '../../actions/fridge';
+import { setFavorite, displayFavorites } from '../../actions/fridge';
 
 // MapStateToProps is to read something in the state
 const mapStateToProps = (state) => {
@@ -23,6 +23,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => ({
     manageSelectedFavorite: (id) => {
         dispatch(setFavorite(id));
+        dispatch(displayFavorites(id))
     }
 });
   

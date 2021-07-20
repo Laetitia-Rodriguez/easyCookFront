@@ -28,10 +28,11 @@ const initialState = {
     productsList: [],
     noProductReturned: false,
     productsReturned: false,
-    selectedFavoriteId: [null],
+    selectedFavoriteId: [],
 };
 
 function fridgeReducer(state = initialState, action = {}) {
+    let nextState
     switch (action.type) {
 
         case DISPLAY_FOOD_GROUPS:
@@ -107,11 +108,27 @@ function fridgeReducer(state = initialState, action = {}) {
             };
         
         case DISPLAY_FAVORITES:
-            return {
-                ...state,
-                favoritesList: action.favoritesListArray,
-            }; 
-    
+
+            const favoriteIndex = state.selectedFavoriteId.findIndex(id => id === action.id)
+            
+            if (favoriteIndex !== -1) {
+                // The product is already in the favorites list, we delete it
+                nextState = {
+                    ...state,
+                    selectedFavoriteId : state.selectedFavoriteId.filter((id, index) => index !== favoriteIndex)
+                }
+            }
+            
+            else {
+                // The product isn't in the favorites list, we add it
+                nextState = {
+                    ...state,
+                    selectedFavoriteId: [...state.selectedFavoriteId, action.id]
+                }
+            }
+
+            return nextState || state
+                
         default:
             return state;
     }
