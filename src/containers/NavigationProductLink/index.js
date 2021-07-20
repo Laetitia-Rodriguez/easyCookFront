@@ -14,7 +14,7 @@ const mapStateToProps = (state) => {
         subgroupIsOpen: state.fridge.subgroupIsOpen,
         foodSubgroupsList: state.fridge.foodSubgroupsList,
         productsList: state.fridge.productsList,
-        selectedFavoriteId: state.fridge.selectedFavoriteId,
+        favoritesListId: state.fridge.favoritesListId,
     }
     
 };

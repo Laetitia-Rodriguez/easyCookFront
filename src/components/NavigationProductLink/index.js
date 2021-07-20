@@ -13,7 +13,7 @@ const NavigationProductLink = ({
     name,
     product,
     noProductReturned,
-    selectedFavoriteId, 
+    favoritesListId, 
     manageSelectedFavorite,
     productsList
 }) => {
@@ -25,7 +25,7 @@ const NavigationProductLink = ({
 
     let productFavoriteIcon = 'product__favorite-icon';
     
-    if (selectedFavoriteId.includes(product.id)) {
+    if (favoritesListId.includes(product.id)) {
         productFavoriteIcon += ' product__favorite-icon--on';
     } 
 

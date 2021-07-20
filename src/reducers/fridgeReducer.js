@@ -28,7 +28,7 @@ const initialState = {
     productsList: [],
     noProductReturned: false,
     productsReturned: false,
-    selectedFavoriteId: [],
+    favoritesListId: [],
 };
 
 function fridgeReducer(state = initialState, action = {}) {
@@ -109,13 +109,13 @@ function fridgeReducer(state = initialState, action = {}) {
         
         case DISPLAY_FAVORITES:
 
-            const favoriteIndex = state.selectedFavoriteId.findIndex(id => id === action.id)
+            const favoriteIndex = state.favoritesListId.findIndex(id => id === action.id)
             
             if (favoriteIndex !== -1) {
                 // The product is already in the favorites list, we delete it
                 nextState = {
                     ...state,
-                    selectedFavoriteId : state.selectedFavoriteId.filter((id, index) => index !== favoriteIndex)
+                    favoritesListId : state.favoritesListId.filter((id, index) => index !== favoriteIndex)
                 }
             }
             
@@ -123,7 +123,7 @@ function fridgeReducer(state = initialState, action = {}) {
                 // The product isn't in the favorites list, we add it
                 nextState = {
                     ...state,
-                    selectedFavoriteId: [...state.selectedFavoriteId, action.id]
+                    favoritesListId: [...state.favoritesListId, action.id]
                 }
             }
 
