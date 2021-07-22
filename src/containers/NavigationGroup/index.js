@@ -25,9 +25,6 @@ const mapDispatchToProps = (dispatch) => ({
     manageFoodGroup: (id) => {
         dispatch(setSelectedGroup(id));
     },
-    clickOnAGroup: () => {
-        dispatch(isOpen());
-    }
 });
 
 // === création de l'assistant

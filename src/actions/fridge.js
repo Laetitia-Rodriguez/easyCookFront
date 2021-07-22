@@ -7,9 +7,7 @@ export const DISPLAY_FOOD_SUBGROUPS = 'DISPLAY_FOOD_SUBGROUPS';
 export const NO_SUBGROUP_RETURNED = 'NO_SUBGROUP_RETURNED';
 export const FOOD_SUBGROUPS_RETURNED = 'FOOD_SUBGROUPS_RETURNED';
 export const SET_SELECTED_GROUP = 'SET_SELECTED_GROUP';
-export const IS_OPEN = 'IS_OPEN';
 export const SET_SELECTED_SUBGROUP = 'SET_SELECTED_SUBGROUP';
-export const SUBGROUP_IS_OPEN = 'SUBGROUP_IS_OPEN';
 export const GET_PRODUCTS = 'GET_PRODUCTS';
 export const DISPLAY_PRODUCTS = 'DISPLAY_PRODUCTS';
 export const NO_PRODUCT_RETURNED = 'NO_PRODUCT_RETURNED';
@@ -55,17 +53,9 @@ export const setSelectedGroup = (id) => ({
   id,
 });
 
-export const isOpen = () => ({
-  type: IS_OPEN,
-});
-
 export const setSelectedSubgroup = (food_subgroup_id) => ({
   type: SET_SELECTED_SUBGROUP,
   food_subgroup_id,
-});
-
-export const subgroupIsOpen = () => ({
-  type: SUBGROUP_IS_OPEN,
 });
 
 export const getProducts = () => ({

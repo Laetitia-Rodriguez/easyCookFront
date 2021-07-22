@@ -26,13 +26,8 @@ const NavigationSubgroupLink= ({
     console.log(food_subgroup_id);
 
     const handleClick = (event) => {
-        selectFoodSubgroup(food_subgroup_id);
-        clickOnASubgroup();
-    } 
-
-    const selectFoodSubgroup = (food_subgroup_id) => {
         manageFoodSubgroup(food_subgroup_id);
-    };
+    } 
 
     return (
        <>

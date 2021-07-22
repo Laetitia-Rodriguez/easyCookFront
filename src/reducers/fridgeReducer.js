@@ -50,10 +50,31 @@ function fridgeReducer(state = initialState, action = {}) {
             };
 
         case SET_SELECTED_GROUP:
-            return {
-                ...state,
-                selectedFoodGroupId: action.id,
-            };
+
+            const selectedFoodGroupId = state.selectedFoodGroupId
+            const id = action.id
+            
+
+            if (id === selectedFoodGroupId ) {
+                // The selectedFoodSubgroupId doesn't change = we want to open or close the subgroup
+                // subgroupIsOpen takes the opposite state = open or close
+                nextState = {
+                    ...state,
+                    isOpen: !state.isOpen,
+                    selectedFoodGroupId: action.id,
+                }
+            }
+            
+            else {
+                // The selectedFoodSubgroupId change : we want to open another subgroup
+                nextState = {
+                    ...state,
+                    isOpen: true,
+                    selectedFoodGroupId: action.id,
+                }
+            }
+    
+                return nextState || state
 
         case DISPLAY_FOOD_SUBGROUPS:
             return {
@@ -73,23 +94,33 @@ function fridgeReducer(state = initialState, action = {}) {
                 foodSubgroupsReturned: true,
             };
 
-        case IS_OPEN:
-            return {
-                ...state,
-                isOpen: !state.isOpen,
-            };
 
         case SET_SELECTED_SUBGROUP:
-            return {
-                ...state,
-                selectedFoodSubgroupId: action.food_subgroup_id,
-            };
 
-        case SUBGROUP_IS_OPEN:
-            return {
-                ...state,
-                subgroupIsOpen: !state.subgroupIsOpen,
-            };
+                const selectedFoodSubgroupId = state.selectedFoodSubgroupId
+                const food_subgroup_id = action.food_subgroup_id
+               
+
+                if (food_subgroup_id === selectedFoodSubgroupId ) {
+                    // The selectedFoodSubgroupId doesn't change = we want to open or close the subgroup
+                    // subgroupIsOpen takes the opposite state = open or close
+                    nextState = {
+                        ...state,
+                        subgroupIsOpen: !state.subgroupIsOpen,
+                        selectedFoodSubgroupId: action.food_subgroup_id,
+                    }
+                }
+                
+                else {
+                    // The selectedFoodSubgroupId change : we want to open another subgroup
+                    nextState = {
+                        ...state,
+                        subgroupIsOpen: true,
+                        selectedFoodSubgroupId: action.food_subgroup_id,
+                    }
+                }
+    
+                return nextState || state
 
         case DISPLAY_PRODUCTS:
             return {

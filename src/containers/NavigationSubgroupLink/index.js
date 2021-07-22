@@ -24,10 +24,8 @@ const mapDispatchToProps = (dispatch) => ({
     },
     manageFoodSubgroup: (food_subgroup_id) => {
         dispatch(setSelectedSubgroup(food_subgroup_id));
-    },
-    clickOnASubgroup: () => {
-        dispatch(subgroupIsOpen());
     }
+    
 });
   
 // === création de l'assistant
