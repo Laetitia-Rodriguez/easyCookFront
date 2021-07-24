@@ -94,6 +94,10 @@ const fridgeMiddleware = (store) => (next) => (action) => {
             break;
         }
 
+        // Request to get from the DB the list of available products 
+        // (selected previously in fridge page)
+        // and then put the names of the products
+        // in the searchFilter of the GET_RECIPE request
         case GET_FAVORITES_NAMES: {
           axios.get(`http://127.0.0.1:8000/api/products/status`)
             .then((response) => {
@@ -110,6 +114,8 @@ const fridgeMiddleware = (store) => (next) => (action) => {
             break;
         } 
 
+        // Get the recipes list with a search from the fridge page
+        // with multiple products
         case GET_RECIPES: {
 
           const { favoritesNamesList } = store.getState().fridge;
