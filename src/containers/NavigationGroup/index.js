@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import NavigationGroup from '../../components/NavigationGroup';
 
 // Import the actions from fridge.js
-import { setSelectedGroup, getFoodSubgroups, isOpen } from '../../actions/fridge';
+import { setSelectedGroup, getFoodSubgroups } from '../../actions/fridge';
 
 // MapStateToProps is to read something in the state
 const mapStateToProps = (state) => {

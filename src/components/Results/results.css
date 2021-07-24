@@ -26,6 +26,30 @@
     width:50vw;
 }
 
+.fridge_results__list {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    padding-inline-start: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fridge_results__item {
+    list-style: none;
+    margin-bottom: 1.5em;
+}
+
+.fridge_results__item-link {
+    margin: auto;
+    text-decoration: none;
+    color: black;
+}
+
+.fridge_results__image {
+    width:50vw;
+}
+
 .results__return-button {
     text-decoration: none;
     border: 1px solid black;

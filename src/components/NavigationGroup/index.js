@@ -15,7 +15,6 @@ const NavigationGroup = ({
     selectedFoodGroupId,
     foodSubgroupsList,
     isOpen,
-    clickOnAGroup,
 }) => {
 
     useEffect (() => {

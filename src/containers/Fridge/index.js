@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Fridge from '../../components/Fridge';
 
 // Import the actions from fridge.js
-import {  getFoodGroups } from '../../actions/fridge';
+import {  getFoodGroups, getFavoritesNames, getRecipes } from '../../actions/fridge';
 
 // MapStateToProps is to read something in the state
 const mapStateToProps = (state) => {
@@ -20,6 +20,9 @@ const mapDispatchToProps = (dispatch) => ({
     loadFoodGroups: () => {
         dispatch(getFoodGroups());
     },
+    manageFridgeSubmit: () => {
+        dispatch(getFavoritesNames());
+      },
 });
 
 // === création de l'assistant

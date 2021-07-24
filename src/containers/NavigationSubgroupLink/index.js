@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 // Import display component
 import NavigationSubgroupLink from '../../components/NavigationSubgroupLink';
-import { setSelectedSubgroup, getProducts, subgroupIsOpen } from '../../actions/fridge';
+import { setSelectedSubgroup, getProducts } from '../../actions/fridge';
 
 // MapStateToProps is to read something in the state
 const mapStateToProps = (state) => {
