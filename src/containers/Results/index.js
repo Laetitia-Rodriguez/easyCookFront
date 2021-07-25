@@ -10,6 +10,9 @@ const mapStateToProps = (state) => (
         resultsList: state.search.resultsList,
         resultsReturned: state.search.resultsReturned,
         errorReturned: state.search.errorReturned,
+        fridgeResultsList: state.fridge.fridgeResultsList,
+        fridgeResultsReturned: state.fridge.fridgeResultsReturned,
+        errorFridgeReturned: state.fridge.errorFridgeReturned,
     }
   );
   

@@ -15,7 +15,6 @@ const NavigationGroup = ({
     selectedFoodGroupId,
     foodSubgroupsList,
     isOpen,
-    clickOnAGroup,
 }) => {
 
     useEffect (() => {
@@ -23,15 +22,8 @@ const NavigationGroup = ({
     }, []);
 
     const handleClick = (event) => {
-        selectFoodGroup(id);
-        clickOnAGroup();
-    } 
-    
-    // console.log(food_group_id);
-
-    const selectFoodGroup = (id) => {
         manageFoodGroup(id);
-    };
+    } 
 
     return (
         <div className="navigation-link__container">

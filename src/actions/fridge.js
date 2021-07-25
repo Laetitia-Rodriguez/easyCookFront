@@ -7,9 +7,7 @@ export const DISPLAY_FOOD_SUBGROUPS = 'DISPLAY_FOOD_SUBGROUPS';
 export const NO_SUBGROUP_RETURNED = 'NO_SUBGROUP_RETURNED';
 export const FOOD_SUBGROUPS_RETURNED = 'FOOD_SUBGROUPS_RETURNED';
 export const SET_SELECTED_GROUP = 'SET_SELECTED_GROUP';
-export const IS_OPEN = 'IS_OPEN';
 export const SET_SELECTED_SUBGROUP = 'SET_SELECTED_SUBGROUP';
-export const SUBGROUP_IS_OPEN = 'SUBGROUP_IS_OPEN';
 export const GET_PRODUCTS = 'GET_PRODUCTS';
 export const DISPLAY_PRODUCTS = 'DISPLAY_PRODUCTS';
 export const NO_PRODUCT_RETURNED = 'NO_PRODUCT_RETURNED';
@@ -18,6 +16,14 @@ export const DISPLAY_FAVORITES = 'DISPLAY_FAVORITES' ;
 export const SELECTED_FAVORITE = 'SELECTED_FAVORITE' ;
 export const SET_FAVORITE = 'SET_FAVORITE' ;
 export const MESSAGE_OK = 'MESSAGE_OK';
+export const GET_RECIPES = 'GET_RECIPES';
+export const DISPLAY_FRIDGE_RESULTS = 'DISPLAY_FRIDGE_RESULTS';
+export const ERROR_FRIDGE_RETURNED = 'ERROR_FRIDGE_RETURNED';
+export const GET_FAVORITES_NAMES_RESULTS = 'GET_FAVORITES_NAMES_RESULTS';
+export const ERROR_FAVORITES_NAMES_RETURNED = 'ERROR_FAVORITES_NAMES_RETURNED';
+export const GET_FAVORITES_NAMES = 'GET_FAVORITES_NAMES';
+export const CLEAN_FAVORITES = 'CLEAN_FAVORITES';
+export const RESET_OK = 'RESET_OK';
 
 // Action creators
 export const getFoodGroups = () => ({
@@ -55,17 +61,9 @@ export const setSelectedGroup = (id) => ({
   id,
 });
 
-export const isOpen = () => ({
-  type: IS_OPEN,
-});
-
 export const setSelectedSubgroup = (food_subgroup_id) => ({
   type: SET_SELECTED_SUBGROUP,
   food_subgroup_id,
-});
-
-export const subgroupIsOpen = () => ({
-  type: SUBGROUP_IS_OPEN,
 });
 
 export const getProducts = () => ({
@@ -88,23 +86,53 @@ export const productsReturned = () => ({
 export const displayFavorites = (id) => ({
   type: DISPLAY_FAVORITES,
   id,
-})
+});
 
 export const selectedFavorite = (id) => ({
   type: SELECTED_FAVORITE,
   id,
-})
+});
 
 export const setFavorite = (id) => ({
   type: SET_FAVORITE,
   id,
-})
+});
 
 export const messageOk = (id) => ({
   type: MESSAGE_OK,
   id,
-})
+});
 
+export const getRecipes = () => ({
+  type: GET_RECIPES,
+});
 
+export const displayFridgeResults = (fridgeResultsArray) => ({
+  type: DISPLAY_FRIDGE_RESULTS,
+  fridgeResultsArray,
+});
 
+export const errorFridgeReturned = () => ({
+  type: ERROR_FRIDGE_RETURNED,
+});
 
+export const getFavoritesNames = () => ({
+  type: GET_FAVORITES_NAMES,
+});
+
+export const getFavoritesNamesResults = (favoritesNamesArray) => ({
+  type: GET_FAVORITES_NAMES_RESULTS,
+  favoritesNamesArray,
+});
+
+export const errorFavoritesNamesReturned = () => ({
+  type: ERROR_FAVORITES_NAMES_RETURNED,
+}); 
+
+export const cleanFavorites = () => ({
+  type: CLEAN_FAVORITES,
+}); 
+
+export const resetOK = () => ({
+  type: RESET_OK,
+});

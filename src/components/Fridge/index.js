@@ -12,7 +12,8 @@ import NavigationGroupsList from '../../containers/NavigationGroupsList';
 const Fridge = ({
     loadFoodGroups,
     noGroupReturned,
-    foodGroupsList, 
+    foodGroupsList,
+    manageFridgeSubmit 
 }) => {
 
     useEffect (() => {
@@ -20,6 +21,11 @@ const Fridge = ({
     }, []);
 
     // console.log(foodGroupsList);
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        manageFridgeSubmit();
+    };
 
     return (
         <div className="fridge">
@@ -29,12 +35,12 @@ const Fridge = ({
             {noGroupReturned && (
                 <p>Erreur de connexion à la base de données</p>
             )}
-            <div className="fridge__submit-container">
+            <form className="fridge__submit-container" onSubmit={handleSubmit}>
                 <input className="fridge__submit-button" type="submit" value="Chercher des recettes"/>
                 <button className="fridge__button" type="submit">
                     <FontAwesomeIcon icon={faSearch} className="fridge__button-icon"/>
                 </button>
-            </div>
+            </form>
         </div>
     );
 };

@@ -6,8 +6,10 @@ import Counter from '../../components/Counter';
 // MapStateToProps is to read something in the state
 const mapStateToProps = (state) => (
     {
-        resultsList: state.search.resultsList,
+        resultsReturned: state.search.resultsReturned,
         resultsCounter: state.search.resultsCounter,
+        fridgeResultsReturned: state.fridge.fridgeResultsReturned,
+        fridgeResultsCounter: state.fridge.fridgeResultsCounter,
     }
 );
 

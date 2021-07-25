@@ -5,14 +5,18 @@ import {
     DISPLAY_FOOD_SUBGROUPS, 
     NO_SUBGROUP_RETURNED,
     FOOD_SUBGROUPS_RETURNED,
-    IS_OPEN,
     SET_SELECTED_SUBGROUP,
-    SUBGROUP_IS_OPEN,
     DISPLAY_PRODUCTS,
     NO_PRODUCT_RETURNED,
     PRODUCTS_RETURNED,
     DISPLAY_FAVORITES, 
     SELECTED_FAVORITE,
+    DISPLAY_FRIDGE_RESULTS,
+    ERROR_FRIDGE_RETURNED,
+    GET_RECIPES,
+    GET_FAVORITES_NAMES_RESULTS,
+    ERROR_FAVORITES_NAMES_RETURNED,
+
 } from '../actions/fridge';
 
 const initialState = {
@@ -31,6 +35,13 @@ const initialState = {
     productsReturned: false,
     favoritesListId: [],
     selectedFavoriteId: null,
+    fridgeResultsList: [],
+    errorFridgeReturned: false,
+    fridgeResultsReturned: false,
+    fridgeResultsCounter: 0,
+    fridgeRedirected: false,
+    errorFavoritesNamesReturned: false,
+    favoritesNamesList: [],
 };
 
 function fridgeReducer(state = initialState, action = {}) {
@@ -50,10 +61,31 @@ function fridgeReducer(state = initialState, action = {}) {
             };
 
         case SET_SELECTED_GROUP:
-            return {
-                ...state,
-                selectedFoodGroupId: action.id,
-            };
+
+            const selectedFoodGroupId = state.selectedFoodGroupId
+            const id = action.id
+            
+
+            if (id === selectedFoodGroupId ) {
+                // The selectedFoodSubgroupId doesn't change = we want to open or close the subgroup
+                // subgroupIsOpen takes the opposite state = open or close
+                nextState = {
+                    ...state,
+                    isOpen: !state.isOpen,
+                    selectedFoodGroupId: action.id,
+                }
+            }
+            
+            else {
+                // The selectedFoodSubgroupId change : we want to open another subgroup
+                nextState = {
+                    ...state,
+                    isOpen: true,
+                    selectedFoodGroupId: action.id,
+                }
+            }
+    
+                return nextState || state
 
         case DISPLAY_FOOD_SUBGROUPS:
             return {
@@ -73,23 +105,33 @@ function fridgeReducer(state = initialState, action = {}) {
                 foodSubgroupsReturned: true,
             };
 
-        case IS_OPEN:
-            return {
-                ...state,
-                isOpen: !state.isOpen,
-            };
 
         case SET_SELECTED_SUBGROUP:
-            return {
-                ...state,
-                selectedFoodSubgroupId: action.food_subgroup_id,
-            };
 
-        case SUBGROUP_IS_OPEN:
-            return {
-                ...state,
-                subgroupIsOpen: !state.subgroupIsOpen,
-            };
+                const selectedFoodSubgroupId = state.selectedFoodSubgroupId
+                const food_subgroup_id = action.food_subgroup_id
+               
+
+                if (food_subgroup_id === selectedFoodSubgroupId ) {
+                    // The selectedFoodSubgroupId doesn't change = we want to open or close the subgroup
+                    // subgroupIsOpen takes the opposite state = open or close
+                    nextState = {
+                        ...state,
+                        subgroupIsOpen: !state.subgroupIsOpen,
+                        selectedFoodSubgroupId: action.food_subgroup_id,
+                    }
+                }
+                
+                else {
+                    // The selectedFoodSubgroupId change : we want to open another subgroup
+                    nextState = {
+                        ...state,
+                        subgroupIsOpen: true,
+                        selectedFoodSubgroupId: action.food_subgroup_id,
+                    }
+                }
+    
+                return nextState || state
 
         case DISPLAY_PRODUCTS:
             return {
@@ -135,8 +177,42 @@ function fridgeReducer(state = initialState, action = {}) {
                 }
             }
 
-            return nextState || state   
+            return nextState || state
+        
+            case GET_RECIPES:
+                return {
+                    ...state,
+                    fridgeRedirected: true,
+                };
+    
+            case DISPLAY_FRIDGE_RESULTS:
+            return {
+                ...state,
+                fridgeResultsList: action.fridgeResultsArray,
+                fridgeResultsReturned: true,
+                fridgeResultsCounter: action.fridgeResultsArray.length,
+            };
 
+        case ERROR_FRIDGE_RETURNED:
+            return {
+                ...state,
+                errorFridgeReturned: true,
+            };
+
+        
+
+        case GET_FAVORITES_NAMES_RESULTS:
+            return {
+                ...state,
+                favoritesNamesList: action.favoritesNamesArray,
+            };
+
+        case ERROR_FAVORITES_NAMES_RETURNED:
+            return {
+                ...state,
+                errorFavoritesNamesReturned: true,
+            }; 
+    
         default:
             return state;
     }

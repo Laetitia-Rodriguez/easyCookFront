@@ -16,17 +16,21 @@ import Homepage from '../../containers/Homepage';
 
 import './main.css';
 
-const Main = ({resultsList, redirect}) => (
+const Main = ({resultsList, redirect, fridgeRedirected, fridgeResultsList}) => (
     <main className="main">
         {redirect && (
           <Redirect to="/résultats" exact />
         )}
+        {fridgeRedirected && (
+          <Redirect to="/résultats" exact />
+        )}
+        
         <Switch>
             <Route path="/mon-frigo" exact>
                 <Fridge />
             </Route>
             <Route path="/résultats" exact>
-                <Results {... resultsList} />
+                <Results {... resultsList} {... fridgeResultsList} />
             </Route>
             <Route path="/recette/:id" exact>
                 <Recipe />
@@ -52,7 +56,14 @@ const Main = ({resultsList, redirect}) => (
 
 Main.propTypes = {
     redirect: PropTypes.bool.isRequired,
+    fridgeRedirected: PropTypes.bool.isRequired,
     resultsList: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.number.isRequired,
+          name: PropTypes.string.isRequired,
+        }).isRequired,
+      ).isRequired,
+    fridgeResultsList: PropTypes.arrayOf(
         PropTypes.shape({
           id: PropTypes.number.isRequired,
           name: PropTypes.string.isRequired,

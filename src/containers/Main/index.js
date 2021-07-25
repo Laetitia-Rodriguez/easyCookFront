@@ -8,6 +8,8 @@ const mapStateToProps = (state) => (
     {
         redirect: state.search.redirect,
         resultsList: state.search.resultsList,
+        fridgeRedirected: state.fridge.fridgeRedirected,
+        fridgeResultsList: state.fridge.fridgeResultsList,
     }
 );
 
