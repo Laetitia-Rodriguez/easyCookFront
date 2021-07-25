@@ -6,12 +6,11 @@ import { setSelectedSubgroup, getProducts } from '../../actions/fridge';
 
 // MapStateToProps is to read something in the state
 const mapStateToProps = (state) => {
-    console.log(state);
+    // console.log(state);
     return {
         productsReturned: state.fridge.productsReturned,
         selectedFoodSubgroupId: state.fridge.selectedFoodSubgroupId, 
         subgroupIsOpen: state.fridge.subgroupIsOpen,
-        foodSubgroupsList: state.fridge.foodSubgroupsList,
         productsList: state.fridge.productsList,
         selectedFavoriteId: state.fridge.selectedFavoriteId,
     }

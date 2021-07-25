@@ -9,11 +9,9 @@ const NavigationSubgroupLink= ({
     link,
     name,
     food_subgroup_id,
-    clickOnASubgroup,
     manageFoodSubgroup,
     subgroupIsOpen,
     productsReturned,
-    foodSubgroupsList,
     selectedFoodSubgroupId,
     productsList,
     loadProducts
@@ -22,8 +20,8 @@ const NavigationSubgroupLink= ({
     useEffect (() => {
         loadProducts();
     }, []);
-
-    console.log(food_subgroup_id);
+    
+    // console.log(food_subgroup_id);
 
     const handleClick = (event) => {
         manageFoodSubgroup(food_subgroup_id);
@@ -46,10 +44,7 @@ const NavigationSubgroupLink= ({
                     (<NavigationProductsList {... productsList} />)
                 }
             </div>
-            
-
         </> 
-       
     );
 };
 
@@ -61,7 +56,6 @@ NavigationSubgroupLink.propTypes = {
     }).isRequired,
     ).isRequired,
     subgroupIsOpen: PropTypes.bool,
-    clickOnASubgroup: PropTypes.func,
 };
 
 export default NavigationSubgroupLink;

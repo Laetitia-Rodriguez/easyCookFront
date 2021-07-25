@@ -1,5 +1,4 @@
 import axios from 'axios';
-import qs from 'qs';
 
 import { 
     GET_FOOD_GROUPS,
@@ -35,7 +34,7 @@ const fridgeMiddleware = (store) => (next) => (action) => {
         case GET_FOOD_GROUPS: {
           axios.get('http://127.0.0.1:8000/api/products/groups')
             .then((response) => {
-                // console.log(response);
+                console.log(response);
                 store.dispatch(displayFoodGroups(response.data));
               })
             .catch((error) => {
@@ -50,7 +49,7 @@ const fridgeMiddleware = (store) => (next) => (action) => {
         case GET_FOOD_SUBGROUPS: {
           axios.get('http://127.0.0.1:8000/api/products/subgroups')
             .then((response) => {
-            // console.log(response);
+            console.log(response);
             store.dispatch(displayFoodSubgroups(response.data));
             store.dispatch(foodSubgroupsReturned());
             })
@@ -67,7 +66,7 @@ const fridgeMiddleware = (store) => (next) => (action) => {
         case GET_PRODUCTS: {
           axios.get('http://127.0.0.1:8000/api/products')
             .then((response) => {
-                // console.log(response);
+                console.log(response);
                 store.dispatch(displayProducts(response.data));
                 store.dispatch(productsReturned());
               })
@@ -85,7 +84,7 @@ const fridgeMiddleware = (store) => (next) => (action) => {
           console.log(selectedFavoriteId);
           axios.put(`http://127.0.0.1:8000/api/products/${selectedFavoriteId}/status`)
             .then((response) => {
-                // console.log(response);
+                console.log(response);
                 store.dispatch(messageOk(response.data));
               })
             .catch((error) => {
@@ -122,17 +121,17 @@ const fridgeMiddleware = (store) => (next) => (action) => {
         case GET_RECIPES: {
 
           const { favoritesNamesList } = store.getState().fridge;
-          console.log(favoritesNamesList);
+          // console.log(favoritesNamesList);
 
           var list = [];
 
           for (let i=0; i<favoritesNamesList.length; i++) {
             var ingredient = favoritesNamesList[i] ; 
-            console.log(ingredient); 
+            // console.log(ingredient); 
             var {name} = ingredient; 
-            console.log(name);
+            // console.log(name);
             list.push(name);
-             console.log(list);
+            // console.log(list);
           } 
 
           axios.get('http://127.0.0.1:8000/api/recipes', {
@@ -163,7 +162,7 @@ const fridgeMiddleware = (store) => (next) => (action) => {
       case CLEAN_FAVORITES: {
         axios.put(`http://127.0.0.1:8000/api/products/status`)
           .then((response) => {
-              // console.log(response);
+              console.log(response);
               store.dispatch(resetOK(response.data));
             })
           .catch((error) => {
