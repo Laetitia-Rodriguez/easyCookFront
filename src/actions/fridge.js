@@ -22,6 +22,8 @@ export const ERROR_FRIDGE_RETURNED = 'ERROR_FRIDGE_RETURNED';
 export const GET_FAVORITES_NAMES_RESULTS = 'GET_FAVORITES_NAMES_RESULTS';
 export const ERROR_FAVORITES_NAMES_RETURNED = 'ERROR_FAVORITES_NAMES_RETURNED';
 export const GET_FAVORITES_NAMES = 'GET_FAVORITES_NAMES';
+export const CLEAN_FAVORITES = 'CLEAN_FAVORITES';
+export const RESET_OK = 'RESET_OK';
 
 // Action creators
 export const getFoodGroups = () => ({
@@ -127,4 +129,10 @@ export const errorFavoritesNamesReturned = () => ({
   type: ERROR_FAVORITES_NAMES_RETURNED,
 }); 
 
+export const cleanFavorites = () => ({
+  type: CLEAN_FAVORITES,
+}); 
 
+export const resetOK = () => ({
+  type: RESET_OK,
+});

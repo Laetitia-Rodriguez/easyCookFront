@@ -21,7 +21,10 @@ import {
     errorFridgeReturned,
     GET_FAVORITES_NAMES,
     getFavoritesNamesResults,
-    errorFavoritesNamesReturned
+    errorFavoritesNamesReturned,
+    cleanFavorites, 
+    CLEAN_FAVORITES,
+    resetOK
 
 
 } from '../actions/fridge';
@@ -99,7 +102,7 @@ const fridgeMiddleware = (store) => (next) => (action) => {
         // and then put the names of the products
         // in the searchFilter of the GET_RECIPE request
         case GET_FAVORITES_NAMES: {
-          axios.get(`http://127.0.0.1:8000/api/products/status`)
+          axios.get(`http://127.0.0.1:8000/api/products/status/names`)
             .then((response) => {
                 console.log(response);
                 store.dispatch(getFavoritesNamesResults(response.data));
@@ -149,11 +152,28 @@ const fridgeMiddleware = (store) => (next) => (action) => {
                 store.dispatch(errorFridgeReturned());
             })
             .finally(() => {
+              store.dispatch(cleanFavorites());
             });
             next(action);
             break;
       }
 
+      // Put back all the products status to 0 in DB
+      // after displaying recipes results
+      case CLEAN_FAVORITES: {
+        axios.put(`http://127.0.0.1:8000/api/products/status`)
+          .then((response) => {
+              // console.log(response);
+              store.dispatch(resetOK(response.data));
+            })
+          .catch((error) => {
+            console.log(error);
+          })
+          .finally(() => {
+          });
+          next(action);
+          break;
+      }
 
       default:
         // Next middleware or reducer

@@ -15,7 +15,7 @@ import {
     ERROR_FRIDGE_RETURNED,
     GET_RECIPES,
     GET_FAVORITES_NAMES_RESULTS,
-    ERROR_FAVORITES_NAMES_RETURNED
+    ERROR_FAVORITES_NAMES_RETURNED,
 
 } from '../actions/fridge';
 
@@ -212,8 +212,7 @@ function fridgeReducer(state = initialState, action = {}) {
                 ...state,
                 errorFavoritesNamesReturned: true,
             }; 
-
-
+    
         default:
             return state;
     }
